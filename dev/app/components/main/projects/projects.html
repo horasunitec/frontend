@@ -1,0 +1,38 @@
+<tb-search-field obj="vm.searchObj" 
+                 results="vm.searchResults" 
+                 data="vm.projects" 
+				 get-all="vm.getAll"
+				 loading="vm.loading"
+                 auto="true">
+</tb-search-field>
+<div class="gallery">
+	<div class="card" ng-repeat="prj in vm.searchResults" title="{{prj.Description}}">
+		<span class="icon-group" ng-show="Role === 'Admin'">
+			<i class="glyphicon glyphicon-remove"
+			ng-click="vm.removeProjectClicked(prj)">
+			</i>
+			<i class="glyphicon glyphicon-pencil" ng-click="vm.goToEdit(prj)"></i>
+		</span>
+		<div id="body" ng-click="vm.goToProject(prj)">
+			<div class="img-area">
+				<img src="img/logo.png" alt="Project Image">
+			</div>
+			<div class="project-info">
+				<h4 ng-class="{ 'overflow webkit': prj.Name.length > 100 }">{{vm.toTitleCase(prj.Name)}}</h4>
+				<span ng-class="{ 'overflow webkit': prj.Description.length > 80 }"
+					ng-show="prj.Name.length < 60">
+					{{prj.Description}}
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
+<h1 style="text-align: center; color: #999;" ng-if="vm.searchResults.length === 0">Sin resultados.</h1>
+<tb-load-more-btn start-page="1" 
+                  page-size="vm.pageSize" 
+                  model="vm.projects" 
+                  get="vm.get"
+                  ng-hide="vm.hideLoadBtn()">
+</tb-load-more-btn>
+<tb-loading class="main-loader" ng-show="vm.loading"></tb-loading>
+<tb-round-btn ng-show="Role === 'Admin'" ng-click="vm.goToNewProject(prj)">+</tb-round-btn>

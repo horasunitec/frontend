@@ -1,0 +1,22 @@
+tb-load-more-btn {
+
+	display: flex; 
+	justify-content: center;
+	
+	.load-more {
+		display: inline-block;
+		background-color: #e5e5e5;
+		font-family: 'Roboto', sans-serif;
+		border-radius: 5px;
+		width: auto;
+		font-size: 1.5em;
+		cursor: pointer;
+		padding: 10px 30px;
+		margin-bottom: 15px;
+
+		&:hover {
+			background-color: #e0e0e0;
+		}
+	}
+
+}

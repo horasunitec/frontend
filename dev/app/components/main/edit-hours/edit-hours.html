@@ -1,0 +1,23 @@
+<div>
+	<div>
+		<div class="text-center">
+			<h2>{{vm.projectName}}</h2>
+		</div>
+		<div class="text-center">
+			<h4>Descripcion: {{vm.description}}</h4>
+			<h4>Costo: {{vm.cost}}</h4>
+		</div>
+		<div class="col-md-12 switch" ng-show="Role === 'Professor' && vm.editHours.visible && !vm.isApproved">
+			<button ng-click="vm.evaluateProject()" class="btn btn-md pull-right eval-proj">
+				<strong>Generar Reporte</strong>
+			</button>
+		</div>
+		<tb-table schema="vm.tableSchema" model="vm.students" table="vm.table"></tb-table><br><br>
+		<button ng-show="vm.editHours.visible && !vm.isApproved" class="btn btn-lg center-block save-hours" 
+		        ng-click="vm.saveChanges()">Guardar cambios</button>
+	</div>
+</div>
+<tb-loading class="main-loader" 
+            ng-show="vm.participantsLoading || vm.projectLoading || vm.loadingProjectInfo || vm.postingHours" 
+            style="z-index: 99999">
+</tb-loading>
