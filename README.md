@@ -23,3 +23,4 @@ $ plop
 $ npm install -g karma
 $ npm test
 ```
+ 
