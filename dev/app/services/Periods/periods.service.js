@@ -1,7 +1,7 @@
 periods.$inject = [ '$http' ];
 
 function periods ($http) {
-	const url = 'http://fiasps.unitec.edu:' + PORT + '/api/Periods';
+	const url = `http://${REMOTE_URL}:${PORT}/api/Periods`;
 	const service = {
 		get: get,
 		post: post,

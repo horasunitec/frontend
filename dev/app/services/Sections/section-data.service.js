@@ -1,7 +1,7 @@
 sectionData.$inject = ['$http'];
 
 function sectionData ($http) {
-   var url = 'http://fiasps.unitec.edu:' + PORT + '/api/';
+   var url = `http://${REMOTE_URL}:${PORT}/api/`;
     
     var service = {
         getClasses: getClasses,

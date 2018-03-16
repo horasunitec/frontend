@@ -2,7 +2,7 @@
 classes.$inject = [ '$http', 'TbUtils' ];
 
 function classes($http, TbUtils) {
-    var url = 'http://fiasps.unitec.edu:' + PORT + '/api/Classes';
+    var url = `http://${REMOTE_URL}:${PORT}/api/Classes`;
     var service = {
         get: get,
         postClass: postClass,

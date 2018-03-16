@@ -1,4 +1,4 @@
-const reportsUrl = `http://fiasps.unitec.edu:${PORT}/api/Reports`,
+const reportsUrl = `http://${REMOTE_URL}:${PORT}/api/Reports`,
       yearParamName = 'Año del Reporte',
       yearPlaceholder = '2016',
       classIdParamName = 'Codigo de la Seccion',
