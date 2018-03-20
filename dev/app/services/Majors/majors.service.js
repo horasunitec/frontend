@@ -1,7 +1,7 @@
 majors.$inject = ['$http', '$q'];
 
 function majors ($http, $q) {
-   var url = 'http://fiasps.unitec.edu:' + PORT + '/api/Majors';
+   var url = 'http://backend-4.apphb.com:' + PORT + '/api/Majors';
     
     var service = {
         getMajors: getMajors,

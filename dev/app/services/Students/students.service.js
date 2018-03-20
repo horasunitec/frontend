@@ -1,7 +1,7 @@
 students.$inject = ['$http', '$q'];
 
 function students ($http, $q) {
-	const url = 'http://fiasps.unitec.edu:' + PORT + '/api/Students';
+	const url = 'http://backend-4.apphb.com:' + PORT + '/api/Students';
 
 	const service = {
 		get: get,

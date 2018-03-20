@@ -1,7 +1,7 @@
 projects.$inject = ['$http', '$rootScope', '$state'];
 
 function projects($http, $rootScope, $state) {
-    var url = 'http://fiasps.unitec.edu:' + PORT + '/api/Projects';
+    var url = 'http://backend-4.apphb.com:' + PORT + '/api/Projects';
 
     var service = {
         getProjects: getProjects,
