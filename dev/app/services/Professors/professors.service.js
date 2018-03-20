@@ -1,7 +1,7 @@
 professors.$inject = ['$http'];
 
 function professors($http) {
-    var url = `http://${REMOTE_URL}:${PORT}/api/Professors`;
+    var url = 'http://fiasps.unitec.edu:' + PORT + '/api/Professors';
 
     var service = {
         registerProfessor: registerProfessor,

@@ -1,7 +1,7 @@
 students.$inject = ['$http', '$q'];
 
 function students ($http, $q) {
-	const url = `http://${REMOTE_URL}:${PORT}/api/Students`;
+	const url = 'http://fiasps.unitec.edu:' + PORT + '/api/Students';
 
 	const service = {
 		get: get,

@@ -1,7 +1,7 @@
 settlement.$inject = ['$http'];
 
 function settlement($http) {
-    const url = `http://${REMOTE_URL}:${PORT}/api/Students`;
+    const url = 'http://fiasps.unitec.edu:' + PORT + '/api/Students';
     const service = {
         getPendingFiniquitos: getPendingFiniquitos,
         dowloadFiniquitoReport: dowloadFiniquitoReport
