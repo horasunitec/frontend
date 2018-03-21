@@ -1,7 +1,7 @@
 periods.$inject = [ '$http' ];
 
 function periods ($http) {
-	const url = 'http://backend-4.apphb.com:' + PORT + '/api/Periods';
+	const url = 'http://backend-4.apphb.com/api/Periods';
 	const service = {
 		get: get,
 		post: post,

@@ -1,7 +1,7 @@
 role.$inject = ['$http'];
 
 function role ($http) {
-	var url = 'http://backend-4.apphb.com:' + PORT + '/api/Login/GetUserRole/';
+	var url = 'http://backend-4.apphb.com/api/Login/GetUserRole/';
 
 	var service = 
 	{

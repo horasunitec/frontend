@@ -1,7 +1,7 @@
 settlement.$inject = ['$http'];
 
 function settlement($http) {
-    const url = 'http://backend-4.apphb.com:' + PORT + '/api/Students';
+    const url = 'http://backend-4.apphb.com/api/Students';
     const service = {
         getPendingFiniquitos: getPendingFiniquitos,
         dowloadFiniquitoReport: dowloadFiniquitoReport

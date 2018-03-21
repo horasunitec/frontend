@@ -2,7 +2,7 @@
 classes.$inject = [ '$http', 'TbUtils' ];
 
 function classes($http, TbUtils) {
-    var url = 'http://backend-4.apphb.com:' + PORT + '/api/Classes';
+    var url = 'http://backend-4.apphb.com/api/Classes';
     var service = {
         get: get,
         postClass: postClass,

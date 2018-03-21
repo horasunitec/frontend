@@ -1,7 +1,7 @@
 sectionProjects.$inject = ['$http'];
 
 function sectionProjects ($http) {
-	var url = 'http://backend-4.apphb.com:' + PORT + '/api/SectionProjects';
+	var url = 'http://backend-4.apphb.com/api/SectionProjects';
 	const service = {
 		getUnapproved: getUnapproved,
 		post: post,

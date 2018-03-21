@@ -11,7 +11,7 @@ function auth($http, $cookieStore, $rootScope) {
     return service;
 
     function Login(username, password, successCallback, errorCallback) {       
-        $http.post(`http://backend-4.apphb.com:${PORT}/api/Login`, JSON.stringify({
+        $http.post(`http://backend-4.apphb.com/api/Login`, JSON.stringify({
             User: username,
             Password: password
         }))
@@ -33,7 +33,7 @@ function auth($http, $cookieStore, $rootScope) {
     };
 
     function AccountId(email, successCallback, errorCallback) {
-        let url = `http://backend-4.apphb.com:${PORT}/api/StudentByEmail/`;
+        let url = `http://backend-4.apphb.com/api/StudentByEmail/`;
         $http.post(url, JSON.stringify(email)).then(successCallback)
             .catch(errorCallback);
     };

@@ -1,7 +1,7 @@
 professors.$inject = ['$http'];
 
 function professors($http) {
-    var url = 'http://backend-4.apphb.com:' + PORT + '/api/Professors';
+    var url = 'http://backend-4.apphb.com/api/Professors';
 
     var service = {
         registerProfessor: registerProfessor,

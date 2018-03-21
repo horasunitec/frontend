@@ -1,7 +1,7 @@
 sectionData.$inject = ['$http'];
 
 function sectionData ($http) {
-   var url = 'http://backend-4.apphb.com:' + PORT + '/api/';
+   var url = 'http://backend-4.apphb.com/api/';
     
     var service = {
         getClasses: getClasses,

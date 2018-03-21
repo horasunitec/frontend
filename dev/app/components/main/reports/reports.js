@@ -1,4 +1,4 @@
-const reportsUrl = `http://backend-4.apphb.com:${PORT}/api/Reports`,
+const reportsUrl = `http://backend-4.apphb.com/api/Reports`,
       yearParamName = 'Año del Reporte',
       yearPlaceholder = '2016',
       classIdParamName = 'Codigo de la Seccion',

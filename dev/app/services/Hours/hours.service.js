@@ -1,7 +1,7 @@
 hours.$inject = ['$http'];
 
 function hours($http) {
-    var url = 'http://backend-4.apphb.com:' + PORT + '/api';
+    var url = 'http://backend-4.apphb.com/api';
     var service = {
         getStudentsBySection: getStudentsBySection,
         postHours: postHours,
