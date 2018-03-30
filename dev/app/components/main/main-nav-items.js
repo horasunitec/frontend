@@ -25,6 +25,14 @@ module.exports = ($rootScope, $state, TbUtils) => {
 	  	},
 
 	  	{
+		  	title: "PERIODOS", ref: "main.periods", url: '/periodos',
+		  	icon: "glyphicon glyphicon-tasks",
+		  	active: $state.current.url.includes('/periodos'),
+		  	show: $rootScope.Role === 'Admin',
+		  	clicked: TbUtils.preventGeneralLoading
+	  	},
+
+	  	{
 		  	title: "CLASES", ref: "main.classes", url: '/clases',
 		  	icon: "glyphicon glyphicon-book",
 		  	active: $state.current.url.includes('/clases'),
@@ -36,14 +44,6 @@ module.exports = ($rootScope, $state, TbUtils) => {
 		  	title: "FINIQUITOS", ref: "main.settlement", url: '/finiquitos',
 		  	icon: "glyphicon glyphicon-list-alt",
 		  	active: $state.current.url.includes('/finiquitos'),
-		  	show: $rootScope.Role === 'Admin',
-		  	clicked: TbUtils.preventGeneralLoading
-	  	},
-
-	  	{
-		  	title: "PERIODOS", ref: "main.periods", url: '/periodos',
-		  	icon: "glyphicon glyphicon-tasks",
-		  	active: $state.current.url.includes('/periodos'),
 		  	show: $rootScope.Role === 'Admin',
 		  	clicked: TbUtils.preventGeneralLoading
 	  	},
