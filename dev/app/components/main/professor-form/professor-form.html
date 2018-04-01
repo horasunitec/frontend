@@ -5,14 +5,14 @@
     
     <div>
         <label class="cd-label">Numero de Cuenta</label>
-        <input ng-model="vm.professor.AccountId" maxlength="8" minlength="8" type="text" 
+        <input ng-model="vm.professor.AccountId" maxlength="8" minlength="1" type="text" 
                ng-pattern="regex['accountId']" name="accountId" id="cd-name" required>
         <span ng-show="form.$submitted || form.accountId.$touched">
             <p class="error-message" ng-show="form.accountId.$error.required">
                 * Por favor ingrese un numero de cuenta.
             </p>
             <p class="error-message" ng-show="form.accountId.$error.minlength">
-                * Numero de cuenta debe de estar compuesto por 8 digitos.
+                * Numero de cuenta debe de estar compuesto por al menos 1 digito.
             </p>
             <p class="error-message" ng-show="form.accountId.$error.pattern">
                 * El numero de cuenta solo puede tener numeros.
@@ -48,7 +48,7 @@
         <label class="cd-label" for="cd-name">Campus</label>
         <select name="campus" ng-model="vm.professor.Campus" required>
             <option value="TGU">TGU</option>
-            <option value="SPS" selected>SPS</option>
+            <option value="USPS" selected>SPS</option>
         </select>
         <span ng-show="form.$submitted || form.campus.$touched">
             <p class="error-message" ng-show="form.campus.$error.required">
