@@ -24,17 +24,19 @@
                     </tr>
                   </thead>
                   <tbody>
-                          <tr ng-repeat="sectionProject in vm.sectionProjects">
-                            <td>{{vm.toTitleCase(sectionProject.Project.Name)}}</td>
-                            <td>{{sectionProject.Section.Code}}</td>
-                            <td>{{sectionProject.Section.Class.Name}}</td>
-                            <td>{{vm.toTitleCase(sectionProject.Section.User.Name)}}</td>
-                            <td>{{sectionProject.Section.User.Email}}</td>
-                            <td class="hidden-sm">{{sectionProject.Section.Period.Number}}</td>
-                          </tr>
-
-                        </tbody>
+                    <tr ng-repeat="sectionProject in vm.sectionProjects">
+                      <td>{{vm.toTitleCase(sectionProject.Project.Name)}}</td>
+                      <td>{{sectionProject.Section.Code}}</td>
+                      <td>{{sectionProject.Section.Class.Name}}</td>
+                      <td>{{vm.toTitleCase(sectionProject.Section.User.Name)}}</td>
+                      <td>{{sectionProject.Section.User.Email}}</td>
+                      <td class="hidden-sm">{{sectionProject.Section.Period.Number}}</td>
+                    </tr>
+                  </tbody>
                 </table>
+                <div ng-show="vm.sectionProjects.length === 0">
+                  <i>No hay proyectos pendientes por aprobar</i>
+                </div>
 
               </div>
 
