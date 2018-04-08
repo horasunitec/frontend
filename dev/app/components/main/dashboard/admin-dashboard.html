@@ -15,16 +15,18 @@
                 <table class="admin table table-list-search table-hover">
                   <thead>
                     <tr>
+                        <th>Codigo Reporte</th>
                         <th>Proyecto</th>
                         <th>Seccion</th>
                         <th>Clase</th>
-                        <th>Maestro</th>
+                        <th>Docente</th>
                         <th>Correo</th>
                         <th>Periodo</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr ng-repeat="sectionProject in vm.sectionProjects">
+                      <td>{{sectionProject.Id}}</td>
                       <td>{{vm.toTitleCase(sectionProject.Project.Name)}}</td>
                       <td>{{sectionProject.Section.Code}}</td>
                       <td>{{sectionProject.Section.Class.Name}}</td>
