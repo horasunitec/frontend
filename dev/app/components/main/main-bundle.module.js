@@ -1,4 +1,5 @@
 const ApproveHours          = require('./approve-hours/approve-hours.module'),
+      ApproveHour           = require('./approve-hour/approve-hour.module'),
       Classes               = require('./classes/classes.module'),
       ClassForm             = require('./class-form/class-form.module'),
       Dashboard             = require('./dashboard/dashboard.module'),
@@ -23,7 +24,7 @@ const ApproveHours          = require('./approve-hours/approve-hours.module'),
       StudentForm           = require('./student-form/student-form.module');
 
 const moduleName = 'main-bundle',
-      components = [ ApproveHours, Classes, ClassForm, Dashboard, EditHours, ImportStudents, Main,
+      components = [ ApproveHours, ApproveHour, Classes, ClassForm, Dashboard, EditHours, ImportStudents, Main,
                      Periods, PeriodForm, Professors, ProfessorForm,  Project, ProjectEvaluationForm, ProjectForm, 
                      Projects, Reports, Section, SectionForm, SectionProjectForm, Sections, Settlement, Students, StudentForm ];
 

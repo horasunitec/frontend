@@ -12,6 +12,7 @@ function redirect (state, toState, role, loggedIn, ev) {
 		case 'main.new-class':
 		case 'main.edit-class':
 		case 'main.approve-hours':
+		case 'main.approve-hour':
 		case 'main.classes':
 		case 'main.students':
 		case 'main.professors':

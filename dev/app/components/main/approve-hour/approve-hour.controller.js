@@ -1,20 +1,27 @@
-ApproveHoursController.$inject = [ 'TbUtils', 'hours' ];
+ApproveHourController.$inject = [ 'TbUtils', 'hours' ,'$stateParams' ];
 
-function ApproveHoursController(TbUtils, hours) {
+function ApproveHourController(TbUtils, hours, stateParams) {
     const vm = this;
 
-    vm.model = undefined;
+    // obtener el parametro
+    vm.sectionProject = JSON.parse(atob(stateParams._sectionProject));
+    vm.model = vm.sectionProject;
+
     vm.toTitleCase = TbUtils.toTitleCase;
     vm.getPeriod = getPeriod;
-    vm.approveHours = approveHours;
+    vm.approveHour = approveHour;
+    searchInfo(vm.model.Id);
 
-    vm.placeholder = 'Buscar por código del reporte.';
-    vm.search = searchInfo;
+    //format text
+    //vm.model.Section.Project.Name = vm.toTitleCase(vm.model.Section.Project.Name);
 
     vm.loading = false;
 
     function getPeriod(period) {
-        return period ? period.Number + period.Year : "";
+        if (period.Number & period.Year) {
+            return "" + period.Number + " - " + period.Year;
+        }
+        return "Periodo No Asignado";
     }
 
     function searchInfo (term) {
@@ -35,7 +42,7 @@ function ApproveHoursController(TbUtils, hours) {
         TbUtils.showErrorMessage(response);
     }
 
-    function approveHours() {
+    function approveHour() {
         vm.loading = true;
         hours.putSectionProjectsApprove(vm.model.Id, putSectionProjectsApproveSuccess,
             putSectionProjectsApproveFail, () => { vm.loading = false; });
@@ -45,6 +52,7 @@ function ApproveHoursController(TbUtils, hours) {
     	TbUtils.displayNotification('success', 'Exitoso',
             'Horas aprobadas correctamente.');
     	//TbUtils.reload()
+        TbUtils.go('main.admin-dashboard'); 
     }
 
     function putSectionProjectsApproveFail(resp){
@@ -53,6 +61,6 @@ function ApproveHoursController(TbUtils, hours) {
 }
 
 module.exports = {
-    name: 'ApproveHoursController',
-    ctrl: ApproveHoursController
+    name: 'ApproveHourController',
+    ctrl: ApproveHourController
 };

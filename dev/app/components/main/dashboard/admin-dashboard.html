@@ -11,7 +11,7 @@
                   </div>
                 </div>
               </div>
-              <div class="panel-body">
+              <!-- <div class="panel-body">
                 <table class="admin table table-list-search table-hover">
                   <thead>
                     <tr>
@@ -39,9 +39,12 @@
                 <div ng-show="vm.sectionProjects.length === 0">
                   <i>No hay proyectos pendientes por aprobar</i>
                 </div>
-
-              </div>
-
+              </div> -->
+                <tb-table class="col-md-12" 
+                          schema="vm.tableSchema" 
+                          model="vm.sectionProjects"
+                          on-row-click="vm.goToApproveHours"><!-- name="_sectionProject" -->
+                </tb-table>
             </div>
 
 </div>
