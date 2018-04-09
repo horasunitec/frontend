@@ -6,8 +6,6 @@ function AdminDashboardController (TbUtils, sectionProjects) {
 	vm.sectionProjects = [];
 	vm.tableSchema = require('../../../table-schemas/unapproved-hours-table-schema');
 
-	
-
 	//mandar el parametro de las horas a aprobar
 	vm.goToApproveHours = _sectionProject => { TbUtils.go('main.approve-hour', 
 									{ _sectionProject: btoa(JSON.stringify(_sectionProject)) }); };

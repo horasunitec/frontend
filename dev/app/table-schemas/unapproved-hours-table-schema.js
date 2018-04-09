@@ -1,5 +1,6 @@
 module.exports = {
-	headers: [ 'Proyecto' ,
+	headers: [ 'Codigo Reporte' ,
+				'Proyecto' ,
 				'Seccion' ,
 				'Clase' ,
 				'Docente' ,
@@ -7,6 +8,7 @@ module.exports = {
 				'Periodo'
 				],
 	rows: [
+		{ type: 'label', props: { text: obj => obj.Id } },
 		{ type: 'label', props: { text: obj => obj.Project.Name } },
 		{ type: 'label', props: { text: obj => obj.Section.Code } },
 		{ type: 'label', props: { text: obj => obj.Section.Class.Name } },

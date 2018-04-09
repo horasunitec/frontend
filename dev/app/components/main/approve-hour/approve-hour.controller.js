@@ -5,16 +5,14 @@ function ApproveHourController(TbUtils, hours, stateParams) {
 
     // obtener el parametro
     vm.sectionProject = JSON.parse(atob(stateParams._sectionProject));
-    vm.model = vm.sectionProject;
-
+    
+    //asignar funciones
     vm.toTitleCase = TbUtils.toTitleCase;
     vm.getPeriod = getPeriod;
     vm.approveHour = approveHour;
-    searchInfo(vm.model.Id);
-
-    //format text
-    //vm.model.Section.Project.Name = vm.toTitleCase(vm.model.Section.Project.Name);
-
+    
+    //popular data
+    vm.model = vm.sectionProject;
     vm.loading = false;
 
     function getPeriod(period) {
@@ -22,13 +20,6 @@ function ApproveHourController(TbUtils, hours, stateParams) {
             return "" + period.Number + " - " + period.Year;
         }
         return "Periodo No Asignado";
-    }
-
-    function searchInfo (term) {
-        vm.loading = true;
-
-        hours.getHoursInfoSectionProjects(term, getHoursInfoSectionProjects,
-            getHoursInfoSectionProjectsFail, () => { vm.loading = false; });
     }
 
     function getHoursInfoSectionProjects(response) {
@@ -51,7 +42,6 @@ function ApproveHourController(TbUtils, hours, stateParams) {
     function putSectionProjectsApproveSuccess(){
     	TbUtils.displayNotification('success', 'Exitoso',
             'Horas aprobadas correctamente.');
-    	//TbUtils.reload()
         TbUtils.go('main.admin-dashboard'); 
     }
 
