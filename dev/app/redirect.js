@@ -40,6 +40,7 @@ function redirect (state, toState, role, loggedIn, ev) {
 		case 'main.sections':
 		case 'main.new-section':
 		case 'main.edit-section':
+		case 'main.delete-section':
 			if (!loggedIn) 
 				goToLanding(state, ev);
 

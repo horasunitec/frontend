@@ -11,11 +11,21 @@
             </div>
           </div>
         </div>
-        <tb-table class="col-md-12" 
-          schema="vm.tableSchema" 
-          model="vm.sectionProjects"
-          on-row-click="vm.goToApproveHours">
-        </tb-table>
+        <div ng-show="vm.sectionProjects.length === 0">
+            <i>No hay proyectos pendientes por aprobar</i>
+        </div>
+        <div ng-show="vm.sectionProjects.length > 0">
+            <!-- <tb-table class="col-md-12" 
+              schema="vm.tableSchema" 
+              model="vm.sectionProjects"
+              on-row-click="vm.goToApproveHours">
+            </tb-table> -->
+            <tb-table  
+              schema="vm.tableSchema" 
+              model="vm.sectionProjects"
+              on-row-click="vm.goToApproveHours">
+            </tb-table>
+        </div>
       </div>
     </div>
   </div>

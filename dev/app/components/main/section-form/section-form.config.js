@@ -16,6 +16,13 @@ function config ($stateProvider) {
             templateUrl: templateUrl,
             controller: "EditSectionController as vm",
 			onEnter: onEditEnter
+		})
+
+		.state('main.delete-section', {
+            url: '/secciones/borrar-seccion/{section}',
+            templateUrl: templateUrl,
+            controller: "DeleteSectionController as vm",
+			onEnter: onDeleteEnter
 		});
 }
 
@@ -27,6 +34,11 @@ let onNewEnter = [ '$rootScope',
 ], onEditEnter = [ '$rootScope', 
 	rootScope => { 
 		rootScope.viewTitle  = "Vinculacion | Editar Seccion";
+    	rootScope.viewStyles = "main project-form";
+    }
+], onDeleteEnter = [ '$rootScope', 
+	rootScope => { 
+		rootScope.viewTitle  = "Vinculacion | Borrar Seccion";
     	rootScope.viewStyles = "main project-form";
     }
 ];
