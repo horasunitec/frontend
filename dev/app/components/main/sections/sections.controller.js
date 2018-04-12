@@ -10,7 +10,7 @@ function SectionsController (TbUtils, sections) {
     vm.sectionObj = term => { return { Class: { Name: term } }; };
 
     vm.sections = [];
-    vm.tableSchema = require('../../../table-schemas/ext-sections-table-schema')(goToEdit, goToDelete);
+    vm.tableSchema = require('../../../table-schemas/ext-sections-table-schema')(goToEdit,goToDelete);
     vm.goToSection = section => { TbUtils.go('main.section', { section: btoa(JSON.stringify(section)) }); };
 
     vm.pageSize = 10;

@@ -9,7 +9,15 @@ function DeleteSectionController (TbUtils, sections, stateParams) {
     vm.section = JSON.parse(atob(stateParams.section));
 
     //delete section
-    TbUtils.displayNotification('success', 'title', vm.section);
+    TbUtils.confirm('Borrar Seccion', `Esta seguro de eliminar la seccion de la clase: ${vm.section.Class.Name} con codigo:${vm.section.Code}?`, 
+        resolve => {
+            if (resolve) {
+                vm.loading = true;
+                TbUtils.deleteAndNotify(sections.deleteSection, vm.section.Id, [], 
+                    'La seccion se borro exitosamente.', () => { vm.loading = false; });
+            }
+        }
+    );
     TbUtils.go('main.sections'); 
 }
 

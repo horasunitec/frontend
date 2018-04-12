@@ -1,4 +1,4 @@
-module.exports = btnClick, btnClick2 => {
+module.exports = (btnClick,btnClick2) => {
 	return {
 		headers: ['Codigo', 'Clase', 'Periodo', 'Catedratico', 'Editar', 'Borrar'],
 		rows: [
