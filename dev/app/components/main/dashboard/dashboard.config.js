@@ -29,7 +29,7 @@ function config ($stateProvider) {
 
 const onStateEnter = [ '$rootScope',
 	rootScope => {
-		rootScope.viewTitle  = "Vinculacion | Inicio";
+		rootScope.viewTitle  = "Vinculación | Inicio";
     	rootScope.viewStyles = "main dashboard";
     }
 ];

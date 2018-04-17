@@ -4,11 +4,11 @@
     </legend>
 
     <div>
-        <label class="cd-label" for="cd-name">Codigo</label>
+        <label class="cd-label" for="cd-name">C&#243;digo</label>
         <input ng-model="vm.section.Code" class="user" type="text" name="code" id="cd-name" required>
         <span ng-show="form.$submitted || form.code.$touched">
             <p class="error-message" ng-show="form.code.$error.required">
-                * Por favor ingrese el codigo de la seccion
+                * Por favor ingrese el c&#243;digo de la secci&#243;n
             </p>
         </span>
     </div>
@@ -50,7 +50,7 @@
                 <span md-highlight-text="vm.searchText">{{ student.Name }}</span>
             </md-item-template>
             <md-not-found>
-                No se encontraron alumnos con el numero de cuenta: {{searchText}}.
+                No se encontraron alumnos con el n&uacute;mero de cuenta: {{searchText}}.
             </md-not-found>
         </md-autocomplete> 
         <button type="button" class="add-student-btn" style="margin-top: 5px; margin-left: 83%;"

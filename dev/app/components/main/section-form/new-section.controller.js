@@ -5,7 +5,7 @@ function NewSectionController (TbUtils, sections, classes, professors, students,
 
     const vm = this;
 
-    vm.formTitle = 'Nueva Seccion';
+    vm.formTitle = 'Nueva Sección';
 
     vm.section = {
         Code: '',
@@ -45,7 +45,7 @@ function NewSectionController (TbUtils, sections, classes, professors, students,
         const studentIds = vm.selectedStudents.map(obj => obj.AccountId);
 
         TbUtils.assignAndGoTo(sections.assignStudents, resp.data.Id, studentIds, 'main.sections', 
-            'La seccion se creo con exito.', () => { vm.submitting = false; });
+            'La sección se creó con exito.', () => { vm.submitting = false; });
     }
 
     function search (term) {

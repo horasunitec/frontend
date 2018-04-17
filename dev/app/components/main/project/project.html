@@ -11,11 +11,14 @@
 				<p>{{vm.project.ProjectId}}</p>
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
-				<h3 class="title_spec">Organizac&iacute;on Beneficiaria</h3>
-				<p>{{vm.project.BeneficiarieOrganization}}</p>
+				<h3 class="title_spec">Organizaci&#243;n Beneficiaria</h3>
+				<p>{{vm.project.BeneficiarieOrganization ? vm.project.BeneficiarieOrganization : "No tiene organización asignada"}}</p>
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
 				<h3 class="title_spec">Carreras Asociadas</h3>
+				<div ng-if="vm.majors.length === 0" >
+					No tiene Carreras Asociadas
+				</div>
 				<p ng-repeat="major in vm.majors">{{major.Name}}</p>
 			</div>
 			<div ng-if="vm.sections.length > 0" 
@@ -28,6 +31,9 @@
 				</tb-table>
 			</div>
 		</div>
+	</div>
+	<div ng-if="vm.sections.length === 0" style="text-align: center;">
+		No hay secciones asignadas
 	</div>
 </div>
 <!-- <tb-loading class="main-loader" ng-show="vm.projectLoading" style="z-index: 99999"></tb-loading> -->

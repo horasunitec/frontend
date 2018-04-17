@@ -1,7 +1,7 @@
 module.exports = {
-	headers: [ 'Codigo Reporte' ,
+	headers: [ 'Código Reporte' ,
 				'Proyecto' ,
-				'Seccion' ,
+				'Sección' ,
 				'Clase' ,
 				'Docente' ,
 				'Correo' ,

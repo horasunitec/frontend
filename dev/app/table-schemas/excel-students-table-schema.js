@@ -1,5 +1,5 @@
 module.exports = {
-	headers: [ 'Numero de Cuenta', 'Nombre', 'Correo', 'Carrera', 'Existe' ],
+	headers: [ 'Número de Cuenta', 'Nombre', 'Correo', 'Carrera', 'Existe' ],
 	rows: [
 		{ type: 'label', props: { text: obj => obj.AccountId }  },
 		{ type: 'label', props: { text: obj => obj.Name }  },

@@ -20,23 +20,7 @@ function SectionsController (TbUtils, sections) {
 
     vm.goToNewSection = () => { TbUtils.go('main.new-section'); };
     vm.loading = true;
-
-    //remove funcion
-    vm.removeSectionClicked = removeSectionClicked;
-
     TbUtils.getAndLoad(sections.getCurrentPeriodSections, vm.sections, () => { vm.loading = false; });
-
-    function removeSectionClicked(section) {
-        // TbUtils.confirm('Eliminar Seccion', `Esta seguro de eliminar ${section.Name}?`, 
-        //     resolve => {
-        //         if (resolve) {
-        //             vm.loading = true;
-        //             TbUtils.deleteAndNotify(sections.deleteSection, section, vm.sections, 
-        //                 'La seccion se borro exitosamente.', () => { vm.loading = false; });
-        //         }
-        //     });
-    }
-
 }
 
 module.exports = { name: 'SectionsController', ctrl: SectionsController };

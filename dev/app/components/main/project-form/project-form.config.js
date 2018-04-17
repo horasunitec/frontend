@@ -21,13 +21,13 @@ function config ($stateProvider) {
 
 let onStateEnterAdd = [ '$rootScope', 
 	function (rootScope) { 
-		rootScope.viewTitle  = "Vinculacion | Nuevo Proyecto";
+		rootScope.viewTitle  = "Vinculación | Nuevo Proyecto";
     	rootScope.viewStyles = "main project-form";
     }
 ],
 	onStateEnterEdit = [ '$rootScope', 
 	function (rootScope) { 
-		rootScope.viewTitle  = "Vinculacion | Editar Proyecto";
+		rootScope.viewTitle  = "Vinculación | Editar Proyecto";
     	rootScope.viewStyles = "main project-form";
     }
 ];

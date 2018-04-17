@@ -5,7 +5,7 @@ function EditSectionController (TbUtils, sections, classes, professors, students
 
     const vm = this;
 
-    vm.formTitle = 'Editar Seccion';
+    vm.formTitle = 'Editar Sección';
 
     vm.section = JSON.parse(atob(stateParams.section));
     vm.section.ClassId = vm.section.Class.Id;
@@ -44,7 +44,7 @@ function EditSectionController (TbUtils, sections, classes, professors, students
         const studentIds = vm.selectedStudents.map(obj => obj.AccountId);
 
         TbUtils.assignAndGoTo(sections.reassignStudents, vm.section.Id, studentIds, 'main.sections', 
-            'La seccion se actualizo con exito.', () => { vm.submitting = false; });
+            'La sección se actualizó con exito.', () => { vm.submitting = false; });
     }
 
     function search (term) {

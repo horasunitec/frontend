@@ -21,12 +21,12 @@ function config ($stateProvider) {
 
 let newProfessorStateEnter = [ '$rootScope', 
 	rootScope => { 
-		rootScope.viewTitle  = "Vinculacion | Nuevo Professor";
+		rootScope.viewTitle  = "Vinculación | Nuevo Professor";
     	rootScope.viewStyles = "main project-form";
     }
 ], editProfessorStateEnter = [ '$rootScope', 
 	rootScope => { 
-		rootScope.viewTitle  = "Vinculacion | Editar Professor";
+		rootScope.viewTitle  = "Vinculación | Editar Professor";
     	rootScope.viewStyles = "main project-form";
     }
 ];

@@ -28,17 +28,17 @@ function config ($stateProvider) {
 
 let onNewEnter = [ '$rootScope', 
 	rootScope => { 
-		rootScope.viewTitle  = "Vinculacion | Nueva Seccion";
+		rootScope.viewTitle  = "Vinculación | Nueva Sección";
     	rootScope.viewStyles = "main project-form";
     }
 ], onEditEnter = [ '$rootScope', 
 	rootScope => { 
-		rootScope.viewTitle  = "Vinculacion | Editar Seccion";
+		rootScope.viewTitle  = "Vinculación | Editar Sección";
     	rootScope.viewStyles = "main project-form";
     }
 ], onDeleteEnter = [ '$rootScope', 
 	rootScope => { 
-		rootScope.viewTitle  = "Vinculacion | Borrar Seccion";
+		rootScope.viewTitle  = "Vinculación | Borrar Sección";
     	rootScope.viewStyles = "main project-form";
     }
 ];

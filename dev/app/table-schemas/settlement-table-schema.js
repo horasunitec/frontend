@@ -1,6 +1,6 @@
 module.exports = btnClick => {
 	const model = {
-		headers: ['Numero de Cuenta', 'Nombre', 'Horas Totales', 'Carrera', 'Descargar Finiquito'],
+		headers: ['Número de Cuenta', 'Nombre', 'Horas Totales', 'Carrera', 'Descargar Finiquito'],
 		rows: [
 			{ type: 'label', props: { text: obj => obj.AccountId }  },
 			{ type: 'label', props: { text: obj => obj.Name }  },

@@ -15,7 +15,7 @@ function config ($stateProvider) {
 
 let onStateEnter = [ '$rootScope', 
 	function (rootScope) { 
-		rootScope.viewTitle  = "Vinculacion | Proyecto";
+		rootScope.viewTitle  = "Vinculación | Proyecto";
     	rootScope.viewStyles = "main project";
     }
 ];

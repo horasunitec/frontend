@@ -20,12 +20,12 @@ function config ($stateProvider) {
 
 const newStudentStateEnter = [ '$rootScope', 
 	rootScope => { 
-		rootScope.viewTitle  = "Vinculacion | Nuevo Alumno";
+		rootScope.viewTitle  = "Vinculación | Nuevo Alumno";
     	rootScope.viewStyles = "main project-form";
     }
 ], editStudentStateEnter = [ '$rootScope', 
 	rootScope => { 
-		rootScope.viewTitle  = "Vinculacion | Editar Alumno";
+		rootScope.viewTitle  = "Vinculación | Editar Alumno";
     	rootScope.viewStyles = "main project-form";
     }
 ];

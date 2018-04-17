@@ -16,9 +16,9 @@ function tbSearchField(TbUtils, filterFilter) {
         },
         templateUrl: 'templates/shared/TB-SearchField/tb-search-field.html',
         link: scope => {
-            if (!scope.placeholder) scope.placeholder = "Ingrese su busqueda";
+            if (!scope.placeholder) scope.placeholder = "Ingrese su búsqueda";
             if (scope.auto && !scope.min) scope.min = 1;
-            if (!scope.onClick) { scope.onClick = searchAll; scope.tooltip = 'Has click para buscar mas.'; }
+            if (!scope.onClick) { scope.onClick = searchAll; scope.tooltip = 'Has click para buscar más.'; }
 
             scope.all = null;
             scope.search = search;

@@ -79,7 +79,7 @@ function EditHoursController($stateParams, sections, projects,
     }
 
     function getSectionProjectFail(response){
-        TbUtils.displayNotification('error', 'Error', 'No existe relacion entre seccion y proyecto.');
+        TbUtils.displayNotification('error', 'Error', 'No existe relacion entre sección y proyecto.');
         vm.loadingProjectInfo = false;
     }
 

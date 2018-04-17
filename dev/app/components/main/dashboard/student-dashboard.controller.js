@@ -59,7 +59,7 @@ function StudentDashboardController ($rootScope, $state, TbUtils, tableContent,
 
   function getSectionHoursFail(response) {
     TbUtils.displayNotification('Error', 'Error con las Horas de Secciones',
-      'No se pudieron cargar las horas de una seccion.');
+      'No se pudieron cargar las horas de una sección.');
     vm.sectionsLoading = false;
   }
 

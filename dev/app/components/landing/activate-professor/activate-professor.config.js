@@ -13,7 +13,7 @@ function config ($stateProvider) {
 
 let onStateEnter = [ '$rootScope',
 	function (rootScope) {
-		rootScope.viewTitle  = "Vinculacion | Activar Professor";
+		rootScope.viewTitle  = "Vinculación | Activar Professor";
     	rootScope.viewStyles = "landing activate-professor";
     }
 ];

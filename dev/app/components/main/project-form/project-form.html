@@ -14,11 +14,11 @@
     </div>
 
     <div class="icon">
-        <label class="cd-label" for="description">Descripcion de Proyecto</label>
+        <label class="cd-label" for="description">Descripci&#243;n de Proyecto</label>
         <textarea ng-model="vm.project.Description" class="message" name="description" id="description" required></textarea>
        <span ng-show="form.$submitted || form.description.$touched">
             <p class="error-message" ng-show="form.description.$error.required">
-                * Por favor ingrese una descripcion.
+                * Por favor ingrese una descripci&#243;n.
             </p>
        </span>
     </div>
@@ -36,13 +36,13 @@
         </div>
         <span ng-show="form.$submitted">
             <p class="error-message" ng-show="vm.project.MajorIds.length === 0">
-                * Por favor selecciona una o mas de las carreras disponibles.
+                * Por favor selecciona una o m&aacute;s de las carreras disponibles.
             </p>
         </span>
     </div> 
 
     <div>
-        <label class="cd-label" for="bene">Organizacion Beneficiaria</label>
+        <label class="cd-label" for="bene">Organizaci&#243;n Beneficiaria</label>
         <input ng-model="vm.project.BeneficiarieOrganization" class="user" type="text" name="bene" id="bene" required>
         <span ng-show="form.$submitted || form.bene.$touched">
             <p class="error-message" ng-show="form.bene.$error.required">

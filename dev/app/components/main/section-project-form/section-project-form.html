@@ -1,7 +1,7 @@
  <md-dialog aria-label="SectionProjectForm" flex="50">
  	<md-toolbar>
       <div class="md-toolbar-tools">
-        <h2>Nuevo Proyecto de Seccion</h2>
+        <h2>Nuevo Proyecto de Secci&oacute;n</h2>
         <span flex></span>
         <md-button class="md-icon-button" ng-click="vm.cancel()">
           <md-icon md-svg-src="img/close.svg" aria-label="Close dialog"></md-icon>
@@ -23,7 +23,7 @@
 	        <span md-highlight-text="searchText">{{project.Name}}</span>
 	      </md-item-template>
 	      <md-not-found>
-	      	No se encontro el proyecto: {{searchText}}.
+	      	No se encontr&oacute; el proyecto: {{searchText}}.
 	      </md-not-found>
 	      <div ng-messages="form.$submitted || form.project.$error" ng-if="form.project.$touched">
 	        <div ng-message="required"><b>Debe</b> seleccionar un proyecto.</div>
@@ -32,11 +32,11 @@
 	    </md-autocomplete>
 
       <md-input-container class="md-block">
-        <label>Descripcion</label>
+        <label>Descripci&oacute;n</label>
         <input md-maxlength="100" required name="description" ng-model="vm.project.Description">
         <div ng-messages="form.$submitted || form.description.$error" ng-if="form.description.$touched">
-          <div ng-message="required">Ingrese una descripcion.</div>
-          <div ng-message="md-maxlength">La descripcion debe ser menor de 100 caracteres.</div>
+          <div ng-message="required">Ingrese una descripci&oacute;n.</div>
+          <div ng-message="md-maxlength">La descripci&oacute;n debe ser menor de 100 caracteres.</div>
         </div>
       </md-input-container>
 

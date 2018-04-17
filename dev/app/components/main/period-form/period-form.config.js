@@ -14,7 +14,7 @@ function config ($stateProvider) {
 
 const onStateEnterNew = [ '$rootScope', 
 	rootScope => { 
-		rootScope.viewTitle  = "Vinculacion | Nuevo Periodo";
+		rootScope.viewTitle  = "Vinculación | Nuevo Periodo";
     	rootScope.viewStyles = "main period-form";
     }
 ];

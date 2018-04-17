@@ -1,8 +1,8 @@
 const reportsUrl = `http://backend-4.apphb.com/api/Reports`,
       yearParamName = 'Año del Reporte',
       yearPlaceholder = '2016',
-      classIdParamName = 'Codigo de la Seccion',
-      classIdPlaceholder = 'Ingrese el codigo';
+      classIdParamName = 'Código de la sección',
+      classIdPlaceholder = 'Ingrese el código';
 
 module.exports = [
 	{ 

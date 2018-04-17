@@ -13,7 +13,7 @@ function config ($stateProvider) {
 
 let onStateEnter = [ '$rootScope', 
 	function (rootScope) { 
-		rootScope.viewTitle  = "Vinculacion | Bienvenido";
+		rootScope.viewTitle  = "Vinculación | Bienvenido";
     	rootScope.viewStyles = "landing login";
     }
 ];

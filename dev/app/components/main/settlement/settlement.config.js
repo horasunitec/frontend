@@ -13,7 +13,7 @@ function config ($stateProvider) {
 
 const onStateEnter = [ '$rootScope', 
 	rootScope => { 
-		rootScope.viewTitle  = "Vinculacion | Finiquitos";
+		rootScope.viewTitle  = "Vinculación | Finiquitos";
     	rootScope.viewStyles = "main settlement";
     }
 ];

@@ -4,17 +4,17 @@ function DeleteSectionController (TbUtils, sections, stateParams) {
 
     const vm = this;
 
-    vm.formTitle = 'Delete Seccion';
+    vm.formTitle = 'Delete Sección';
 
     vm.section = JSON.parse(atob(stateParams.section));
 
     //delete section
-    TbUtils.confirm('Borrar Seccion', `Esta seguro de eliminar la seccion de la clase: ${vm.section.Class.Name} con codigo:${vm.section.Code}?`, 
+    TbUtils.confirm('Borrar Sección', `Esta seguro de eliminar la sección de la clase: ${vm.section.Class.Name} con código:${vm.section.Code}?`, 
         resolve => {
             if (resolve) {
                 vm.loading = true;
                 TbUtils.deleteAndNotify(sections.deleteSection, vm.section.Id, [], 
-                    'La seccion se borro exitosamente.', () => { vm.loading = false; });
+                    'La sección se borro exitosamente.', () => { vm.loading = false; });
             }
         }
     );

@@ -13,7 +13,7 @@ function config ($stateProvider) {
 
 const onStateEnter = [ '$rootScope', 
 	rootScope => { 
-		rootScope.viewTitle  = "Vinculacion | Aprobar Horas";
+		rootScope.viewTitle  = "Vinculación | Aprobar Horas";
     	rootScope.viewStyles = "main approve-hours";
     }
 ];
