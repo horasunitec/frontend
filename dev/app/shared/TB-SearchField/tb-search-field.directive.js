@@ -30,14 +30,30 @@ function tbSearchField(TbUtils, filterFilter) {
                     scope.results = scope.data;
             });
 
+            function searchAllParameters (term, term2) {
+                if (term.length === 0) return;
+                if (typeof scope.getAll === 'function' && !scope.all) {
+                    scope.loading = true;
+                    scope.getAll(resp => { 
+                                            scope.all = resp.data; 
+                                            search(scope.all, term); 
+                                        }, 
+                                            TbUtils.showErrorMessage,
+                                 () => { scope.loading = false; });
+                    console.log(scope);
+                }
+                else
+                    search(scope.all, term);
+            }
+
             function searchAll (term) {
                 if (term.length === 0) return;
-                
                 if (typeof scope.getAll === 'function' && !scope.all) {
                     scope.loading = true;
                     scope.getAll(resp => { scope.all = resp.data; search(scope.all, term); }, 
                                  TbUtils.showErrorMessage,
                                  () => { scope.loading = false; });
+                    console.log(scope);
                 }
                 else
                     search(scope.all, term);

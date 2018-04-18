@@ -1,21 +1,18 @@
 <div class="container">
   <div class="col-xs-9 col-sm-7 col-md-7" style="margin-top: 15px;">
     <div class="row">
-      <h1 class="col-xs-4 col-sm-5 col-md-10 class-style">{{vm.toTitleCase(vm.section.Class.Name)}}</h1>
-      <h2 class="col-xs-9 col-sm-8 col-md-5 professor">{{vm.toTitleCase(vm.section.User.Name)}}</h2>
+      <h1 class="col-xs-4 col-sm-5 col-md-10 class-style">Clase: {{vm.toTitleCase(vm.section.Class.Name)}}</h1>
+      <h2 class="col-xs-9 col-sm-8 col-md-5 class-style">Docente: {{vm.toTitleCase(vm.section.User.Name)}}</h2>
     </div>
     <ul class="list">
       <li class="row">
-        <label class="col-md-2">C&oacute;digo</label>
-        <label class="col-md-3 element"><strong>{{vm.toTitleCase(vm.section.Code)}}</strong></label>
+        <label class="col-md-4">C&oacute;digo de Secci&oacute;n: {{vm.section.Code}}</label>
       </li>
       <li class="row">
-        <label class="col-md-1">Periodo</label>
-        <label class="col-md-3 element"><strong>{{vm.section.Period.Number}}</strong></label>
+        <label class="col-md-4">Periodo: {{vm.section.Period.Number}}</label>
       </li>
       <li class="row">
-        <label class="col-md-1">Año</label>
-        <label class="col-md-3 element"><strong>{{vm.section.Period.Year}}</strong></label>
+        <label class="col-md-4">Año: {{vm.section.Period.Year}}</label>
       </li>
     </ul>
     <div style="padding-left: 20px;" ng-show="Role === 'Student'">
@@ -27,8 +24,27 @@
 
 <div ng-if="vm.students.length > 0">
   <div>
-    <h1 style="margin-left: 10%; margin-bottom: 20px;" class="col-md-10 class-style">Alumnos</h1>
-    <tb-table schema="vm.studentsTableSchema" model="vm.students"></tb-table>
+    <h1 style="margin-left: 10%; margin-bottom: 20px;" class="col-md-10 class-style">Alumnos en esta Secci&oacute;n</h1>
+  </div>
+
+  <div class="panel-body">
+    <table class="admin table table-list-search table-hover">
+      <thead>
+        <tr>
+            <th>Numero de Cuenta</th>
+            <th>Nombre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="student in vm.students">
+          <td>{{student.AccountId}}</td>
+          <td>{{vm.toTitleCase(student.Name)}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div ng-show="vm.sectionProjects.length === 0">
+      <i>No hay proyectos pendientes por aprobar</i>
+    </div>
   </div>
 </div>
 
