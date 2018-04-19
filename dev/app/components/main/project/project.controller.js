@@ -14,6 +14,8 @@ function ProjectController(TbUtils, majors, sections, stateParams) {
 
     vm.goToSection = section => { TbUtils.go('main.section', { section: btoa(JSON.stringify(section)) }); };
 
+    vm.goToEdit = project => { TbUtils.go('main.edit-project', { project: btoa(JSON.stringify(vm.project)) }); };
+
     TbUtils.getExistingAndLoad(majors.getMajorsByProject, vm.project.Id, vm.majors, () => { vm.majorsLoading = false; });
     TbUtils.getExistingAndLoad(sections.getSectionsByProject, vm.project.Id, vm.sections, () => { vm.sectionsLoading = false; });
 

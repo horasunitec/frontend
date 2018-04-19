@@ -1,55 +1,19 @@
-ApproveHoursController.$inject = [ 'TbUtils', 'hours' ];
+ApproveHoursController.$inject = [ 'TbUtils', 'hours', 'sectionProjects' ];
 
-function ApproveHoursController(TbUtils, hours) {
+function ApproveHoursController(TbUtils, hours, sectionProjects) {
     const vm = this;
 
-    vm.model = undefined;
+    vm.sectionProjects = [];
+    vm.tableSchema = require('../../../table-schemas/unapproved-hours-table-schema');
+
+    //mandar el parametro de las horas a aprobar
+    vm.goToApproveHours = _sectionProject => { TbUtils.go('main.approve-hour', 
+                                    { _sectionProject: btoa(JSON.stringify(_sectionProject)) }); };
     vm.toTitleCase = TbUtils.toTitleCase;
-    vm.getPeriod = getPeriod;
-    vm.approveHours = approveHours;
 
-    vm.placeholder = 'Buscar por código del reporte.';
-    vm.search = searchInfo;
+    vm.loading = true;
 
-    vm.loading = false;
-
-    function getPeriod(period) {
-        return period ? period.Number + period.Year : "";
-    }
-
-    function searchInfo (term) {
-        vm.loading = true;
-
-        hours.getHoursInfoSectionProjects(term, getHoursInfoSectionProjects,
-            getHoursInfoSectionProjectsFail, () => { vm.loading = false; });
-    }
-
-    function getHoursInfoSectionProjects(response) {
-        vm.model = response.data;
-        if(vm.model.IsApproved)
-        	TbUtils.displayNotification('warning', 'Advertencia',
-            'Estas horas ya fueron Aprobadas');
-    }
-
-    function getHoursInfoSectionProjectsFail(response) {
-        TbUtils.showErrorMessage(response);
-    }
-
-    function approveHours() {
-        vm.loading = true;
-        hours.putSectionProjectsApprove(vm.model.Id, putSectionProjectsApproveSuccess,
-            putSectionProjectsApproveFail, () => { vm.loading = false; });
-    }
-
-    function putSectionProjectsApproveSuccess(){
-    	TbUtils.displayNotification('success', 'Exitoso',
-            'Horas aprobadas correctamente.');
-    	//TbUtils.reload()
-    }
-
-    function putSectionProjectsApproveFail(resp){
-    	TbUtils.showErrorMessage(resp);
-    }
+    TbUtils.getAndLoad(sectionProjects.getUnapproved, vm.sectionProjects, () => { vm.loading = false; });
 }
 
 module.exports = {

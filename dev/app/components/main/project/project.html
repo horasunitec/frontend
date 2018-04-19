@@ -21,6 +21,14 @@
 				</div>
 				<p ng-repeat="major in vm.majors">{{major.Name}}</p>
 			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<md-button class="md-raised approve-button" 
+							style="background-color: #283b5b; color:white;" 
+							ng-click="vm.goToEdit()"
+							ng-show="Role === 'Admin'">
+							Editar Proyecto
+				</md-button>
+			</div>
 			<div ng-if="vm.sections.length > 0" 
 			     style="margin-left: 10%; margin-bottom: 20px;" class="col-md-10 class-style">
 				<h1>Secciones</h1>
