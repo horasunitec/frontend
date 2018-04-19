@@ -1,10 +1,13 @@
 <div class="container">
   <div class="col-xs-9 col-sm-7 col-md-7" style="margin-top: 15px;">
-    <div class="row">
-      <h1 class="col-xs-4 col-sm-5 col-md-10 class-style">Clase: {{vm.toTitleCase(vm.section.Class.Name)}}</h1>
-      <h2 class="col-xs-9 col-sm-8 col-md-5 class-style">Docente: {{vm.toTitleCase(vm.section.User.Name)}}</h2>
+    <div>
+      <h1>Clase: {{vm.toTitleCase(vm.section.Class.Name)}}</h1>
+      <h2>Docente: {{vm.toTitleCase(vm.section.User.Name)}}</h2><br>
+      <label>C&oacute;digo de Secci&oacute;n: {{vm.section.Code}}</label><br>
+      <label>Periodo: {{vm.section.Period.Number}}</label><br>
+      <label>Año: {{vm.section.Period.Year}}</label><br><br>
     </div>
-    <ul class="list">
+    <!-- <ul class="list">
       <li class="row">
         <label class="col-md-4">C&oacute;digo de Secci&oacute;n: {{vm.section.Code}}</label>
       </li>
@@ -14,21 +17,21 @@
       <li class="row">
         <label class="col-md-4">Año: {{vm.section.Period.Year}}</label>
       </li>
-    </ul>
+    </ul> -->
     <div style="padding-left: 20px;" ng-show="Role === 'Student'">
       <h3><strong>Horas Acumuladas: {{vm.sectionhours}}</strong></h3>
     </div>
   </div>
-  <img class="logo-image" src="img/logo.png"/>
+  <!-- <img src="img/logo.png"/> -->
 </div>
 
 <div ng-if="vm.students.length > 0">
   <div>
-    <h1 style="margin-left: 10%; margin-bottom: 20px;" class="col-md-10 class-style">Alumnos en esta Secci&oacute;n</h1>
+    <br><h1 style="margin-left:6%; margin-bottom: 20px;"><strong>Alumnos en esta Secci&oacute;n</strong></h1>
   </div>
 
-  <div class="panel-body">
-    <table class="admin table table-list-search table-hover">
+  <div class="panel-body" style="margin-right: 10%">
+    <table class="admin table table-list-search table-hover" style="margin-left: 5%;">
       <thead>
         <tr>
             <th>Numero de Cuenta</th>
@@ -48,7 +51,7 @@
   </div>
 </div>
 
-<h1 style="margin-left: 10%; margin-bottom: 20px;" class="col-md-10 class-style">Proyectos</h1>
+<h1 style="margin-left: 5%; margin-bottom: 20px;" class="col-md-10 class-style">Proyectos</h1>
 <tb-table schema="vm.projectsTableSchema" model="vm.projects" on-row-click="vm.goToEditHours"></tb-table>
 <div style="display: flex; justify-content: flex-end; margin: 45px 0; width: 90%;">
   <md-button class="md-raised" ng-click="vm.showSectionProjectModal()">Agregar Proyecto</md-button>

@@ -41,7 +41,9 @@ function StudentDashboardController ($rootScope, $state, TbUtils, tableContent,
         return projects;
       }
   }
+
   function getStudentHourReportSuccess(response) {
+
     vm.totalHours = response.data.TotalHours;
     vm.projects = limitProjects(response.data.Projects);
     vm.studentsLoading = false;
