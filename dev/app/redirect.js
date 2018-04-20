@@ -8,6 +8,7 @@ function redirect (state, toState, role, loggedIn, ev) {
 		case 'main.new-professor':
 		case 'main.reports':
 		case 'main.settlement':
+		case 'main.finalized':
 		case 'main.admin-dashboard':
 		case 'main.new-class':
 		case 'main.edit-class':

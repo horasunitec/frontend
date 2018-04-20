@@ -49,6 +49,14 @@ module.exports = ($rootScope, $state, TbUtils) => {
 	  	},
 
 	  	{
+		  	title: "FINIQUITADOS", ref: "main.finalized", url: '/finiquitados',
+		  	icon: "glyphicon glyphicon-list-alt",
+		  	active: $state.current.url.includes('/finiquitados'),
+		  	show: $rootScope.Role === 'Admin',
+		  	clicked: TbUtils.preventGeneralLoading
+	  	},
+
+	  	{
 		  	title: "PROFESORES", ref: "main.professors", url: '/profesores',
 		  	icon: "glyphicon glyphicon-user",
 		  	active: $state.current.url.includes('/profesores'),

@@ -12,11 +12,12 @@ const auth        = require('./services/Auth/auth.module'),
       tbTable     = require('./services/TbTable/tb-table-services.module'),
       tbUtils     = require('./services/TbUtils/tb-utils.module'),
       users       = require('./services/Users/users.module'),
-      settlement  = require('./services/Settlement/settlement.module');
+      settlement  = require('./services/Settlement/settlement.module'),
+      finalized   = require('./services/Finalized/finalized.module');;
 
 const moduleName    = 'vinculacion.services',
       dependencies  = [ auth, classes, hours, majors, periods, professors, projects, reports,
-                        sections, sprojects, students, tbTable, tbUtils, users, settlement];
+                        sections, sprojects, students, tbTable, tbUtils, users, settlement, finalized];
 
 angular.module(moduleName, dependencies);
 
