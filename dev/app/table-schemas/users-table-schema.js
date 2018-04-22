@@ -19,7 +19,7 @@ module.exports = userType => {
 
 		schema.rows.splice(5, 0, 
 			{ 
-				type: 'label', props: { text: obj => obj.Finiquitado ? 'Si' : 'No' } 
+				type: 'label', props: { text: obj => obj.Finiquiteado ? 'Si' : 'No' } 
 			});
 	}
 
