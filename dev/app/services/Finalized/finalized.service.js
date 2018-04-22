@@ -8,7 +8,7 @@ function finalized($http) {
     };
 
     function getFinalizedFiniquitos(success, error, fin) {
-        $http.get(url + '/PendingFiniquitoStudents')
+        $http.get(url + '/FinalizedFiniquitoStudents')
         .then(success)
         .catch(error)
         .finally(fin);
