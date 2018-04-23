@@ -5,6 +5,7 @@ function classes($http, TbUtils) {
     var url = 'http://backend-4.apphb.com/api/Classes';
     var service = {
         get: get,
+        getAlpha: getAlpha,
         postClass: postClass,
         update: update,
         getWithPagination: getWithPagination
@@ -14,6 +15,13 @@ function classes($http, TbUtils) {
 
     function get (success, error, fin) {
         $http.get(url)
+            .then(success)
+            .catch(error)
+            .finally(fin);
+    }
+
+    function getAlpha (success, error, fin) {
+        $http.get(url + '/alpha')
             .then(success)
             .catch(error)
             .finally(fin);

@@ -30,8 +30,8 @@ function NewSectionController (TbUtils, sections, classes, professors, students,
     vm.studentsLoading = true;
     vm.submitting = false;
 
-    TbUtils.getAndLoad(classes.get, vm.classes, () => { vm.classesLoading = false; });
-    TbUtils.getAndLoad(professors.get, vm.professors, () => { vm.professorsLoading = false; });
+    TbUtils.getAndLoad(classes.getAlpha, vm.classes, () => { vm.classesLoading = false; });
+    TbUtils.getAndLoad(professors.getAlpha, vm.professors, () => { vm.professorsLoading = false; });
     TbUtils.getAndLoad(students.get, vm.students, () => { vm.studentsLoading = false; });
 
     function submit () {

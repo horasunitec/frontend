@@ -9,6 +9,7 @@ function professors($http) {
         getActiveProfessor: getActiveProfessor,
         getWithPagination: getWithPagination,
         get: get,
+        getAlpha: getAlpha,
         update: update
     };
 
@@ -42,6 +43,13 @@ function professors($http) {
 
     function get (success, error, fin) {
         $http.get(url)
+            .then(success)
+            .catch(error)
+            .finally(fin);
+    }
+
+    function getAlpha (success, error, fin) {
+        $http.get(url + '/alpha')
             .then(success)
             .catch(error)
             .finally(fin);
