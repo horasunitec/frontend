@@ -45,7 +45,7 @@
                          md-search-text="searchText" 
                          md-items="student in vm.search(searchText)" 
                          md-item-text="student.Name"
-                         placeholder="Ingrese numero de cuenta o nombre">
+                         placeholder="Ingrese numero de cuenta o nombre y presione Agregar">
             <md-item-template>
                 <span md-highlight-text="vm.searchText">{{ student.Name }}</span>
             </md-item-template>
@@ -53,7 +53,7 @@
                 No se encontraron alumnos con el n&uacute;mero de cuenta: {{searchText}}.
             </md-not-found>
         </md-autocomplete> 
-        <button type="button" class="add-student-btn" style="margin-top: 5px; margin-left: 83%;"
+        <button type="button" class="add-student-btn" style="margin-top: 5%; margin-left: 83%"
                 ng-click="vm.addStudent()">AGREGAR</button>
         <tb-loading class="main-loader" ng-show="vm.studentsLoading"></tb-loading>
     </div> 
@@ -64,9 +64,10 @@
                   on-row-click="vm.removeStudent" ng-hide="vm.submitting">
         </tb-table>
     </div>
-
+    <br><br>
     <div>
-        <input type="submit" ng-hide="vm.submitting" value="Confirmar">
+        <input type="submit" ng-hide="vm.submitting" value="Crear Seccion">
     </div>
+    <br><br><br>
 </form>
 <tb-loading class="main-loader" ng-show="vm.submitting"></tb-loading>

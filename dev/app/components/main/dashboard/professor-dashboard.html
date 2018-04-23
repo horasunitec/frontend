@@ -1,15 +1,29 @@
-<div class="container" style="margin-top: 20px;">
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h2 class="panel-title text-center">Secciones Actuales</h2>
-		</div>
-		<div class="panel-body row" ng-if="vm.sections">
-			<tb-table class="col-md-12" 
-			          schema="vm.tableSchema" 
-			          model="vm.sections" 
-			          on-row-click="vm.goToSection">
-			</tb-table>
-		</div>
-	</div>
+<div class="admin container">
+  <div class="row">
+    <div class="col-lg-15" style="margin: auto; width: 100%;">
+      <br>
+      <br>
+      <div class="panel panel-primary panel-table">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col col-xs-6">
+              <h3 class="panel-title"><b>Bienvenido Docente!</b></h3>
+            </div>
+          </div>
+        </div>
+        <!-- 1024 × 683 -->
+        <div style="max-height:683px; max-width: 1024px;margin-left: auto;margin-right: auto;">
+          <img src="img/campus.jpg" style="width:100%;height:auto;"/>
+        </div>
+        <div style="margin-left: 4%">
+          <h3>Descripcion de Modulos</h3>
+          <h4><u>Proyectos</u></h4>
+          <p>Pantalla para la vista, creacion y edicion de proyectos, en esta pantalla se muestran los proyectos del periodo actual.<br>Los proyectos contienen nombre, descripcion de proyecto, carreras asociadas y Oraganizacion Beneficiaria </p>
+          
+          <br><h4><u>Secciones</u></h4>
+          <p>Pantalla para la vista, creacion y edicion de secciones, en esta pantalla se muestran las Secciones del periodo actual.<br>Las secciones contiene codigo, clase, docente y alumnos</p>
+      </div>
+    </div>
+  </div>
 </div>
-<tb-loading class="main-loader" ng-show="vm.sectionsLoading" style="z-index: 99999"></tb-loading>
+<tb-loading class="main-loader" ng-show="vm.loading"></tb-loading>

@@ -5,6 +5,9 @@
 				 loading="vm.loading"
                  auto="true">
 </tb-search-field>
+<div ng-if="vm.projects.length === 0 && Role === 'Professor'">
+  <h4 style="text-align: center; color: #999;">No tiene secciones en este periodo.</h4>
+</div>
 <div class="gallery">
 	<div class="card" ng-repeat="prj in vm.searchResults" title="{{prj.Description}}">
 		<span class="icon-group" ng-show="Role === 'Admin'">
@@ -31,4 +34,4 @@
                   ng-hide="vm.hideLoadBtn()">
 </tb-load-more-btn>
 <tb-loading class="main-loader" ng-show="vm.loading"></tb-loading>
-<tb-round-btn ng-show="Role === 'Admin'" ng-click="vm.goToNewProject(prj)">+</tb-round-btn>
+<tb-round-btn ng-show="Role === 'Admin' || Role === 'Professor' " ng-click="vm.goToNewProject(prj)">+</tb-round-btn>

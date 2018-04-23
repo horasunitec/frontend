@@ -52,9 +52,15 @@
 </div>
 
 <h1 style="margin-left: 5%; margin-bottom: 20px;" class="col-md-10 class-style">Proyectos</h1>
-<tb-table schema="vm.projectsTableSchema" model="vm.projects" on-row-click="vm.goToEditHours"></tb-table>
+<div ng-if="vm.projects.length === 0">
+  <h6 style="margin-left: 5%; margin-bottom: 20px;" class="col-md-10">Aun no existe proyectos asignados a esta seccion, presiona en Agregar Proyecto.</h6>
+</div>
+<div ng-if="vm.projects.length > 0">
+  <tb-table schema="vm.projectsTableSchema" model="vm.projects" on-row-click="vm.goToEditHours"></tb-table>
+</div>
+
 <div style="display: flex; justify-content: flex-end; margin: 45px 0; width: 90%;">
-  <md-button class="md-raised" ng-click="vm.showSectionProjectModal()">Agregar Proyecto</md-button>
+  <md-button class="md-raised" style="background: #5bb7b5" ng-click="vm.showSectionProjectModal()">Agregar Proyecto</md-button>
 </div>
 
 <tb-loading class="main-loader" ng-show="vm.projectsLoading || vm.studentsLoading"></tb-loading>

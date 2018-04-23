@@ -5,6 +5,9 @@
                  loading="vm.loading" 
                  auto="true">
 </tb-search-field>
+<div ng-if="vm.sections.length === 0 && Role === 'Professor'">
+  <h4 style="text-align: center; color: #999;">No tiene secciones en este periodo.</h4>
+</div>
 <div class="row" ng-if="vm.sections.length > 0">
 	<tb-table class="col-md-12" 
 	          schema="vm.tableSchema" 
