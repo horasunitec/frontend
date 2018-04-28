@@ -6,6 +6,7 @@ function hours($http) {
         getStudentsBySection: getStudentsBySection,
         postHours: postHours,
         getStudentHourReport: getStudentHourReport,
+        getStudentUnApprovedHourReport:getStudentUnApprovedHourReport,
         getFiniquitoURL: getFiniquitoURL,
         getHoursInfoSectionProjects:getHoursInfoSectionProjects,
         putSectionProjectsApprove:putSectionProjectsApprove
@@ -30,6 +31,11 @@ function hours($http) {
 
     function getStudentHourReport(accountId, successCallback, errorCallback) {
         $http.get(url + '/StudentHourReport/' + accountId).
+        then(successCallback).catch(errorCallback);
+    }
+
+    function getStudentUnApprovedHourReport(accountId, successCallback, errorCallback) {
+        $http.get(url + '/StudentUnApprovedHourReport/' + accountId).
         then(successCallback).catch(errorCallback);
     }
 

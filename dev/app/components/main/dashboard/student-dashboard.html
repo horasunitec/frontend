@@ -8,7 +8,7 @@
         </h2>
     </div>
     <div class="sales report">
-        <h2>Horas Aprobadas</h2>
+        <h2>Horas Ingresadas</h2>
         <br>
         <div class="panel-body" style="margin-right: 10%">
             <table class="admin table table-list-search table-hover" style="margin-left: 5%;">
@@ -38,35 +38,5 @@
         </div>
     </div>
     <br><br>
-    <!-- <div class="sales report">
-        <h2>Horas No Aprobadas</h2>
-        <br>
-        <div class="panel-body" style="margin-right: 10%">
-            <table class="admin table table-list-search table-hover" style="margin-left: 5%;">
-              <thead>
-                <tr style="text-align: center">
-                    <th>Periodo</th>
-                    <th>Año</th>
-                    <th>Proyecto</th>
-                    <th>Clase</th>
-                    <th>Docente</th>
-                    <th>Horas</th>
-                    <th>Organizacion Beneficiada</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr ng-repeat="prj in vm.projects">
-                  <td>{{prj.Period}}</td>
-                  <td>{{prj.Year}}</td>
-                  <td>{{prj.ProjectName}}</td>
-                  <td>{{prj.ClassName}}</td>
-                  <td>{{prj.ProfessorName}}</td>
-                  <td>{{prj.HoursWorked}}</td>
-                  <td>{{prj.Organization}}</td>
-                </tr>
-              </tbody>
-            </table>
-        </div>
-    </div> -->
 </div>
 <tb-loading class="main-loader" ng-show="vm.sectionsLoading || vm.studentsLoading"></tb-loading>

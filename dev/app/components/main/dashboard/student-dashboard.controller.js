@@ -8,18 +8,20 @@ function StudentDashboardController ($rootScope, $state, TbUtils, tableContent,
   vm.totalHours = null;
   vm.name = null;
   vm.projects = [];
+  vm.unapprovedProjects = [];
   vm.sections = [];
   vm.goToSection = goToSection;
   vm.toTitleCase = TbUtils.toTitleCase;
   vm.studentsLoading = true;
   vm.sectionsLoading = true;
-  vm.limitProjects = limitProjects;
+  vm.studentsUnApprovedLoading = true;
   students.getAccountId(getAccountIdSuccess, getStudentHourReportFail);
 
   function getAccountIdSuccess(response){
       vm.accountId = response.data.AccountId;
       vm.name = response.data.Name;
       hours.getStudentHourReport(vm.accountId, getStudentHourReportSuccess, getStudentHourReportFail);
+      hours.getStudentUnApprovedHourReport(vm.accountId, getStudentUnApprovedHourReportSuccess, getStudentUnApprovedHourReportFail);
       students.getSectionHours(vm.accountId, getSectionHoursSuccess, getSectionHoursFail);
   }
 
@@ -30,28 +32,25 @@ function StudentDashboardController ($rootScope, $state, TbUtils, tableContent,
     });
   }
 
-  function limitProjects(projects){
-      prjs = [];
-      if(projects.length >= 4){
-        for(i = 0; i < 4; i++){
-          prjs[i] = projects[i];
-        }
-        return prjs;
-      }else{
-        return projects;
-      }
-  }
-
   function getStudentHourReportSuccess(response) {
-
     vm.totalHours = response.data.TotalHours;
-    vm.projects = limitProjects(response.data.Projects);
+    vm.projects = response.data.Projects;
     vm.studentsLoading = false;
   }
 
   function getStudentHourReportFail(response) {
     TbUtils.displayNotification('Error', 'Error con Reportes', 'No se pudieron cargar las horas de los proyectos.');
     vm.studentsLoading = false;
+  }
+
+  function getStudentUnApprovedHourReportSuccess(response) {
+    vm.projects = response.data.Projects;
+    vm.studentsUnApprovedLoading = false;
+  }
+
+  function getStudentUnApprovedHourReportFail(response) {
+    TbUtils.displayNotification('Error', 'Error con Reportes', 'No se pudieron cargar las horas no aprobadas de los proyectos.');
+    vm.studentsUnApprovedLoading = false;
   }
 
   function getSectionHoursSuccess(response) {
