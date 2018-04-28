@@ -1,6 +1,6 @@
-<div class="container" ng-show="vm.model && !vm.model.IsApproved">
+<div class="container" ng-show="vm.model && !vm.model.IsApproved" style="margin-bottom: 80px">
 	<div class="row project-info">
-		<h1 class="projec-title col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<h1 class="projec-title col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top: 35px;margin-bottom: 35px">
 		Proyecto: {{vm.model.Project.Name}}
 		</h1>
 		<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
@@ -32,10 +32,37 @@
 				</h4>
 				<h5 class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> {{vm.model.Section.User.Email}}</h5>
 			</div>
+		</div>	
+	</div>
+	<div class="panel-body" style="margin: auto;margin-top: 35px">
+		<div ng-show="vm.studentsHours.length > 0">
+			<h2 >Horas Ingresadas</h2>
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<md-button class="md-raised approve-button" style="background-color: #283b5b; color:white;" ng-click="vm.approveHour()">Aprobar Horas</md-button>
+		<table class="admin table table-list-search table-hover">
+			<thead>
+				<tr>
+				<th>Cuenta</th>
+				<th>Nombre</th>
+				<th>Horas</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="student in vm.studentsHours">
+				<td>{{student.User.AccountId}}</td>
+				<td>{{student.User.Name}}</td>
+				<td>{{student.Hours.Amount}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<div ng-show="vm.studentsHours.length === 0">
+			<i>No hay alumnos con horas</i>
 		</div>
 	</div>
-<tb-loading class="main-loader" ng-show="vm.loading"></tb-loading>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<md-button class="md-raised approve-button" style="background-color: #283b5b; color:white;" ng-click="vm.approveHour()">
+			Aprobar Horas
+		</md-button>
+	</div>
 </div>
+
+<tb-loading class="main-loader" ng-show="vm.loading"></tb-loading>

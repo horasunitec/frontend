@@ -1,6 +1,6 @@
-ApproveHourController.$inject = [ 'TbUtils', 'hours' ,'$stateParams' ];
+ApproveHourController.$inject = [ 'TbUtils', 'hours' , 'sections', '$stateParams' ];
 
-function ApproveHourController(TbUtils, hours, stateParams) {
+function ApproveHourController(TbUtils, hours, sections, stateParams) {
     const vm = this;
 
     // obtener el parametro
@@ -12,8 +12,24 @@ function ApproveHourController(TbUtils, hours, stateParams) {
     vm.approveHour = approveHour;
     
     //popular data
+    vm.studentsHours = [];
     vm.model = vm.sectionProject;
-    vm.loading = false;
+    vm.loading = true;
+
+    sections.getStudentsHoursBySectionProjectId(vm.sectionProject.Section.Id, 
+                                                vm.sectionProject.Project.Id, 
+                                                getStudentsHoursSuccess, 
+                                                getStudentsHoursFail);
+
+    function getStudentsHoursSuccess(response){
+        vm.studentsHours = response.data.Hours;
+        vm.loading = false;
+    }
+
+    function getStudentsHoursFail(response){
+        vm.loading = false;
+        TbUtils.showErrorMessage(response);
+    }
 
     function getPeriod(period) {
         if (period.Number & period.Year) {
