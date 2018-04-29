@@ -93,6 +93,10 @@ function EditHoursController($stateParams, sections, projects,
         let reqData = [];
         for (let i = 0; i < vm.students.length; i++) {
             const student = vm.students[i];
+
+            if(typeof vm.table.rows[i].elements[2].props.model === 'undefined' && typeof vm.table.rows[i].elements[2].props.model === 'undefined'){
+                throw "Cantidad de Horas invalida, no pueden ser mas de 100 horas";
+            }
             const obj = {
                 AccountId: student.User.AccountId,
                 HourId: student.Hours ? student.Hours.Id : -1,
@@ -118,12 +122,18 @@ function EditHoursController($stateParams, sections, projects,
     function saveHours() {
         vm.postingHours = true;
 
-        let obj = {
-            ProjectId: parseInt($stateParams.projectId),
-            SectionId: parseInt($stateParams.sectionId),
-            StudentsHour: getStudentsHours()
-        };
-        hours.postHours(obj, postHoursSuccess, postHoursFail);
+        try{
+            let obj = {
+                ProjectId: parseInt($stateParams.projectId),
+                SectionId: parseInt($stateParams.sectionId),
+                StudentsHour: getStudentsHours()
+            };
+            hours.postHours(obj, postHoursSuccess, postHoursFail);
+        }
+        catch(error){
+            TbUtils.displayNotification('error', error);
+            vm.postingHours = false;
+        }
     }
 
     function postHoursSuccess() {
