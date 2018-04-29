@@ -28,7 +28,8 @@ function TbUtils(toaster, $rootScope, $mdDialog, $state) {
         reload: reload,
         customDialog: customDialog,
         sortBy: sortBy,
-        go: go
+        go: go,
+        assignAndGoToSection:assignAndGoToSection
     };
     var vm = this;
     vm.ModalParams;
@@ -82,10 +83,10 @@ function TbUtils(toaster, $rootScope, $mdDialog, $state) {
         if (response.status === 400) {
             const err = response.data.ModelState;
             for (const key in err)
-                displayNotification('error', 'Error', err[key][0]);
+                displayNotification('error', 'Error: ' + err[key][0]);
         }
         else
-            displayNotification('error', 'Error', response.data);
+            displayNotification('error', 'Error: ' + response.data);
     }
 
     function setModalParams(params) {
@@ -232,6 +233,13 @@ function TbUtils(toaster, $rootScope, $mdDialog, $state) {
         post(id, data, resp => {
             displayNotification('success', 'Exito', msg ? msg : 'Se creo con exito!');
             go(toState);
+        }, showErrorMessage, fin);
+    }
+
+    function assignAndGoToSection(post, id, data, toState, section, msg, fin){
+        post(id, data, resp => {
+            displayNotification('success', 'Exito', msg ? msg : 'Se creo con exito!');
+            go(toState, { section: btoa(JSON.stringify(section)) });
         }, showErrorMessage, fin);
     }
 

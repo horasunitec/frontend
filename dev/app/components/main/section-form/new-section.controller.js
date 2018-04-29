@@ -43,9 +43,13 @@ function NewSectionController (TbUtils, sections, classes, professors, students,
 
     function assignStudents (resp) {
         const studentIds = vm.selectedStudents.map(obj => obj.AccountId);
-
-        TbUtils.assignAndGoTo(sections.assignStudents, resp.data.Id, studentIds, 'main.sections', 
-            'La sección se creó con exito.', () => { vm.submitting = false; });
+        TbUtils.assignAndGoToSection(sections.assignStudents, 
+                                    resp.data.Id, 
+                                    studentIds, 
+                                    'main.section', 
+                                    resp.data,
+                                    'La sección se creó con exito.', 
+                                    () => { vm.submitting = false; });
     }
 
     function search (term) {
