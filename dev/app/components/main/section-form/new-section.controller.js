@@ -59,8 +59,13 @@ function NewSectionController (TbUtils, sections, classes, professors, students,
 
     function addStudent () {
         if (vm.selectedStudents.indexOf(vm.selectedStudent) >= 0) return;
+        if (vm.selectedStudent !== null) {
+            vm.selectedStudents.push(vm.selectedStudent);
+        }
+        else{
+            TbUtils.displayNotification('error', "Escoja un alumno y presione el boton de Agregar");
+        }
         
-        vm.selectedStudents.push(vm.selectedStudent);
     }
 
 }
