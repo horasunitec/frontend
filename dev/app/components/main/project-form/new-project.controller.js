@@ -25,7 +25,7 @@ function NewProjectController (TbUtils, projects, majors) {
         if (vm.project.MajorIds.length === 0) return;
 
         vm.submitting = true;
-        TbUtils.postAndGoTo(projects.postProject, vm.project, 'main.projects', 
+        TbUtils.postAndGoTo(projects.postProject, vm.project, 'main.new-section', 
             'El proyecto fue creado exitosamente.', () => { vm.submitting = false; });
     }
 
