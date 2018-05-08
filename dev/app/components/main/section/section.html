@@ -27,14 +27,14 @@
 
 <div ng-if="vm.students.length > 0">
   <div>
-    <br><h1 style="margin-left:6%; margin-bottom: 20px;"><strong>Alumnos en esta Secci&oacute;n</strong></h1>
+    <br><h1 style="margin-left:6%; margin-bottom: 20px;"><strong>Alumnos en &eacute;sta Secci&oacute;n</strong></h1>
   </div>
 
   <div class="panel-body" style="margin-right: 10%">
     <table class="admin table table-list-search table-hover" style="margin-left: 5%;">
       <thead>
         <tr>
-            <th>Numero de Cuenta</th>
+            <th>N&uacute;mero de Cuenta</th>
             <th>Nombre</th>
         </tr>
       </thead>
@@ -53,7 +53,7 @@
 
 <h1 style="margin-left: 5%; margin-bottom: 20px;" class="col-md-10 class-style">Proyectos</h1>
 <div ng-if="vm.projects.length === 0">
-  <h6 style="margin-left: 5%; margin-bottom: 20px;" class="col-md-10">Aun no existe proyectos asignados a esta seccion, presiona en Agregar Proyecto.</h6>
+  <h6 style="margin-left: 5%; margin-bottom: 20px;" class="col-md-10">A&uacute;n no existe proyectos asignados a esta secci&oacute;n, presiona en Agregar Proyecto.</h6>
 </div>
 <div ng-if="vm.projects.length > 0">
   <tb-table schema="vm.projectsTableSchema" model="vm.projects" on-row-click="vm.goToEditHours"></tb-table>

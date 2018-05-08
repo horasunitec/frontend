@@ -13,7 +13,7 @@ module.exports = [
 		placeholder: yearPlaceholder
 	},
 	{ 
-		title: 'Reporte del Numero de Alumnos', 
+		title: 'Reporte del Número de Alumnos', 
 	  	url: `${reportsUrl}/StudentsReport/`,
 		hasParam: true,
 		paramName: yearParamName,

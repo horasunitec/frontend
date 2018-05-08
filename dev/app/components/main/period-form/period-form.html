@@ -3,11 +3,11 @@
         <div layout-gt-xs="column" layout-align="center center">
           <h2 style="margin-bottom: 30px;">{{vm.formTitle}}</h2>
           <md-input-container class="md-block">
-            <h4>Numero de Periodo</h4>
+            <h4>N&uacute;mero de Periodo</h4>
             <input type="number" name="num" ng-model="vm.period.Number" min="1" max="5" required>
             <div ng-messages="form.$submitted || form.num.$error" ng-if="form.num.$touched">
-              <div ng-message="required">Escoja el numero del periodo.</div>
-              <div ng-message="min || max">El numero debe ser entre 1 y 5.</div>
+              <div ng-message="required">Escoja el n&uacute;mero del periodo.</div>
+              <div ng-message="min || max">El n&uacute;mero debe ser entre 1 y 5.</div>
             </div>
           </md-input-container>
           <div flex-gt-xs style="margin-bottom: 30px;">

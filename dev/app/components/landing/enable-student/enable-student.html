@@ -11,19 +11,19 @@
               <div class="inner-addon left-addon">
                 <span class="fa fa-sort-numeric-asc"></span>
                 <input ng-model="vm.student.AccountId" class="user" type="text" name="accountId" 
-                placeholder="N&uacute;mero de Cuenta" ng-pattern="regex['accountId']" 
+                placeholder="Número de Cuenta" ng-pattern="regex['accountId']" 
                 minlength="8" maxlength="8" required>
               </div>
               <span ng-show="form.$submitted || form.accountId.$touched">
                 <p class="error-message" ng-show="form.accountId.$error.required">
-                  Por favor ingrese un numero de cuenta.
+                  Por favor ingrese un n&uacute;mero de cuenta.
                 </p>
                 <p class="error-message" 
                 ng-show="form.accountId.$error.minlength">
-                  El numero de cuenta debe de ser de 8 digitos.
+                  El n&uacute;mero de cuenta debe de ser de 8 digitos.
                 </p>
                 <p class="error-message" ng-show="form.accountId.$error.pattern">
-                  El numero de cuenta solo puede contener numeros.
+                  El n&uacute;mero de cuenta solo puede contener n&uacute;meros.
                 </p>
               </span>
             </div>
@@ -61,10 +61,10 @@
                   Por favor ingrese su contraseña.
                 </p>
                 <p class="error-message" ng-show="form.password.$error.minlength">
-                  La contraseña debe tener 8 caracteres minimo.
+                  La contraseña debe tener 8 caracteres m&iacute;nimo.
                 </p>
                 <p class="error-message" ng-show="form.password.$error.pattern">
-                  La contraseña debe tener por lo menos 1 numero y 1 letra mayuscula.
+                  La contraseña debe tener por lo menos 1 n&uacute;mero y 1 letra may&uacute;scula.
                 </p>
               </span>
             </div>
@@ -87,7 +87,7 @@
               </span>
             </div>
           </div>
-          <p class="message register">¿Ya estas registrado? <a ui-sref="landing.login">Iniciar Sesion </a></p>
+          <p class="message register">¿Ya est&aacute;s registrado? <a ui-sref="landing.login">Iniciar Sesi&oacute;n </a></p>
         </fieldset>
         <input class="btn btn-lg btn-info" type="submit" value="Confirmar">
       </form>
