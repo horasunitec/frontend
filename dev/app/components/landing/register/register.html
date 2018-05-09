@@ -1,8 +1,7 @@
-<br><h2 align="center" style="color: white">Sistema Horas de Vinculaci&oacute;n<br>UNITEC SPS</h2>
-<div class="login-page">
-      <img class = "img-responsive logo" src="img/logo.png" style="width:100%;height:auto; max-width: 180px" />
+<br><h2 align="center" style="color: white">Registrarse<br>UNITEC SPS</h2>
+<div class="register-page">
       <div class="form">
-        <form id="login-form" class="login-form" name="registerLogin" ng-submit="registerLogin.$valid && vm.login()" novalidate>
+        <form id="register-form" class="register-form" name="registerLogin" ng-submit="registerLogin.$valid && vm.register()" novalidate>
             <div class="inner-addon left-addon">
             <span class="fa fa-user"></span>
             <input name="usuario" ng-model="vm.username" ng-pattern="regex['email']" type="email" placeholder="Correo de Unitec" required/>
@@ -12,9 +11,6 @@
             <input name="clave" ng-model="vm.password" type="password" placeholder="Clave" required/>
             </div>
             <button id="ingresar" type="submit">Ingresar</button>
-            <p class="message register">No est&aacute;s registrado a&uacute;n? <a ui-sref="landing.enable-student">Crear una cuenta </a></p>
-
-            <p class="message register"><a ui-sref="landing.register">Registrarse</a></p>
             <tb-loading class="landing-loader main-loader" ng-show="vm.loading"></tb-loading>
         </form>
       </div>

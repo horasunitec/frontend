@@ -4,6 +4,7 @@ function sections($http) {
     var url = 'http://backend-4.apphb.com/api/Sections';
     var service = {
         getSections: getSections,
+        getSectionsByPeriod: getSectionsByPeriod,
         post: post,
         deleteSection: deleteSection,
         getStudents: getStudents,
@@ -28,6 +29,11 @@ function sections($http) {
             .then(success)
             .catch(error)
             .finally(fin);
+    }
+
+    function getSectionsByPeriod(number, year, successCallback, errorCallback) {
+        $http.get(url + "/SectionsByPeriod/" + number + "/" + year).then(successCallback)
+            .catch(errorCallback);
     }
 
     function post (data, suc, err, fin) {

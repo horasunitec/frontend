@@ -76,6 +76,7 @@ function redirect (state, toState, role, loggedIn, ev) {
 		case 'landing':
 		case 'landing.login':
 		case 'landing.enable-student':
+		case 'landing.register':
 		case 'landing.activate-professor': 
 			if (loggedIn)
 				goToDashboard(state, role, ev);

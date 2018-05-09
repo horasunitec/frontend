@@ -12,6 +12,8 @@ function ProjectsController(TbUtils, projects, $rootScope) {
     vm.hideLoadBtn = () => vm.projects.length !== vm.searchResults.length;
 
     vm.projects = [];
+    vm.periodNumbers = ['',1,2,3,4,5];
+    vm.periodYears = ['', 2018,2017,2016,2015,2014];
 
     vm.goToProject = project => { TbUtils.go('main.project', { project: btoa(JSON.stringify(project)) }); };
     vm.goToNewProject = project => { TbUtils.go('main.new-project'); };
