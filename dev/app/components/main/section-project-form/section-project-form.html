@@ -17,7 +17,7 @@
 	        md-search-text="searchText"
 	        md-items="project in vm.search(searchText)"
 	        md-item-text="project.Name"
-	        md-floating-label="Proyecto"
+	        md-floating-label="Buscar Proyecto"
 	        md-require-match>
 	      <md-item-template>
 	        <span md-highlight-text="searchText">{{project.Name}}</span>
@@ -32,10 +32,10 @@
 	    </md-autocomplete>
 
       <md-input-container class="md-block">
-        <label>Descripci&oacute;n</label>
+        <label>Actividades a desarrollar</label>
         <input md-maxlength="100" required name="description" ng-model="vm.project.Description">
         <div ng-messages="form.$submitted || form.description.$error" ng-if="form.description.$touched">
-          <div ng-message="required">Ingrese una descripci&oacute;n.</div>
+          <div ng-message="required">Ingrese las actividades a desarrollar en este proyecto.</div>
           <div ng-message="md-maxlength">La descripci&oacute;n debe ser menor de 100 caracteres.</div>
         </div>
       </md-input-container>

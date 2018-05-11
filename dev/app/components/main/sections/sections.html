@@ -5,16 +5,24 @@
                  loading="vm.loading" 
                  auto="true">
 </tb-search-field>
-<select name="_periodNumber" ng-model="vm.periodNumber" ng-change="vm.filterByPeriod()">
-    <option value="{{_periodNumber}}" ng-repeat="_periodNumber in vm.periodNumbers">{{_periodNumber}}</option>
-</select>
-<select name="_periodYear" ng-model="vm.periodYear" ng-change="vm.filterByPeriod()">
-    <option value="{{_periodYear}}" ng-repeat="_periodYear in vm.periodYears">{{_periodYear}}</option>
-</select>
-<div ng-if="vm.sections.length === 0 && Role === 'Professor'">
+<div style="margin-left: auto;margin-right: auto;text-align: center;width: 10%;margin-bottom: 5%">
+  <div style="float: left">
+    <h5>Period:</h5>
+    <select name="_periodNumber" ng-model="vm.periodNumber" ng-change="vm.filterByPeriod()">
+        <option value="{{_periodNumber}}" ng-repeat="_periodNumber in vm.periodNumbers">{{_periodNumber}}</option>
+    </select>
+  </div>
+  <div style="float: left;">
+    <h5>Año:</h5>
+    <select name="_periodYear" ng-model="vm.periodYear" ng-change="vm.filterByPeriod()">
+        <option value="{{_periodYear}}" ng-repeat="_periodYear in vm.periodYears">{{_periodYear}}</option>
+    </select>
+  </div>
+</div>
+<div ng-if="vm.sections.length === 0 && Role === 'Professor'" style="width: 100%">
   <h4 style="text-align: center; color: #999;">No tiene secciones en este periodo.</h4>
 </div>
-<div class="row" ng-if="vm.sections.length > 0">
+<div class="row" ng-if="vm.sections.length > 0" style="width: 100%">
 	<tb-table class="col-md-12" 
 	          schema="vm.tableSchema" 
 	          model="vm.searchResults"
@@ -22,12 +30,13 @@
 	</tb-table>
 </div>
 <h1 style="text-align: center; color: #999;" ng-if="vm.sections.length > 0 && vm.searchResults.length === 0">Sin resultados.</h1>
+<div style="margin-top: 2px;margin-bottom: 2px;"></div>
 <tb-load-more-btn start-page="1" 
                   page-size="vm.pageSize" 
                   model="vm.sections" 
                   get="vm.get"
                   ng-hide="vm.hideLoadBtn()"
-                  style="margin-top: 15px;">
+                  style="margin-top: 15px;width: 100%">
 </tb-load-more-btn>
 <tb-loading class="main-loader" ng-show="vm.loading"></tb-loading>
 <tb-round-btn ng-click="vm.goToNewSection()">+</tb-round-btn>
