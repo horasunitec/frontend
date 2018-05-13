@@ -5,6 +5,7 @@ function projects($http, $rootScope, $state) {
 
     var service = {
         getProjects: getProjects,
+        getProjectsByPeriod: getProjectsByPeriod,
         getProjectsByUser: getProjectsByUser,
         getProject: getProject,
         postProject: postProject,
@@ -37,6 +38,11 @@ function projects($http, $rootScope, $state) {
             .catch(error)
             .finally(fin);
     };
+
+    function getProjectsByPeriod(number, year, successCallback, errorCallback) {
+        $http.get(url + "/ProjectsByPeriod/" + number + "/" + year).then(successCallback)
+            .catch(errorCallback);
+    }
 
     function getProjectsByUser(successCallback, errorCallback) {
         $http.get(url + '/ProjectsByUser').then(successCallback).catch(errorCallback);

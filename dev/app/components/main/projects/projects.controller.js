@@ -1,6 +1,6 @@
-ProjectsController.$inject = [ 'TbUtils', 'projects', '$rootScope' ];
+ProjectsController.$inject = [ 'TbUtils', 'projects', '$rootScope', 'periods'];
 
-function ProjectsController(TbUtils, projects, $rootScope) {
+function ProjectsController(TbUtils, projects, $rootScope, periods) {
     const vm = this;
 
     vm.searchObj = term => { return { Name: term }; };
@@ -13,7 +13,7 @@ function ProjectsController(TbUtils, projects, $rootScope) {
 
     vm.projects = [];
     vm.periodNumbers = ['',1,2,3,4,5];
-    vm.periodYears = ['', 2018,2017,2016,2015,2014];
+    vm.periodYears = getYearsList();
 
     vm.goToProject = project => { TbUtils.go('main.project', { project: btoa(JSON.stringify(project)) }); };
     vm.goToNewProject = project => { TbUtils.go('main.new-project'); };
@@ -26,6 +26,23 @@ function ProjectsController(TbUtils, projects, $rootScope) {
     
     TbUtils.getAndLoad(vm.get, vm.projects, () => { vm.loading = false; }, 0, vm.pageSize);
 
+    vm.periodNumber = '';
+    vm.periodYear = '';
+
+    vm.filterByPeriod = () => {
+        vm.loading = true;
+        if (vm.periodNumber === '' || vm.periodNumber === null) {
+            vm.periodNumber = 0;
+        }
+        if (vm.periodYear === '' || vm.periodYear === null) {
+            vm.periodYear = 0;
+        }
+        projects.getProjectsByPeriod(vm.periodNumber,
+                                    vm.periodYear,
+                                    getProjectsByPeriodSuccess,
+                                    getAnyFail);
+    };
+
     function removeProjectClicked(project) {
         TbUtils.confirm('Eliminar Proyecto', `Esta seguro de eliminar ${project.Name}?`, 
             resolve => {
@@ -37,6 +54,26 @@ function ProjectsController(TbUtils, projects, $rootScope) {
             });
     }
 
+    function getProjectsByPeriodSuccess(response){
+        vm.projects = response.data;
+        vm.searchResults = response.data;
+        vm.loading = false;
+    }
+
+    function getAnyFail(response){
+        TbUtils.showErrorMessage(response);
+        vm.loading = false;
+    }
+
+    function getYearsList(){
+        let initialYear = 2011;
+        let currentYear = (new Date()).getFullYear();
+        var yearArray = [];
+        for(var i=initialYear; i<=currentYear; i++){
+            yearArray.push(i);
+        }
+        return yearArray.reverse();
+    }
 }
 
 module.exports = { name: 'ProjectsController', ctrl: ProjectsController };

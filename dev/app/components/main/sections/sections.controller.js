@@ -43,7 +43,6 @@ function SectionsController (TbUtils, sections, filterFilter) {
     TbUtils.getAndLoad(sections.getCurrentPeriodSections, vm.sections, () => { vm.loading = false; });
 
     function getSectionsByPeriodSuccess(response) {
-        console.log(response.data);
         vm.sections = response.data;
         vm.searchResults = response.data;
         vm.loading = false;

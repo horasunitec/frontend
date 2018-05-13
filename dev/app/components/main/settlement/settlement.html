@@ -1,3 +1,16 @@
 <tb-search-field obj="vm.searchObj" results="vm.searchResults" data="vm.tableData" auto="true"></tb-search-field>
-<tb-table class="col-md-12" schema="vm.tableSchema" model="vm.searchResults"></tb-table>
+<div style="margin-left: auto;margin-right: auto;text-align: center;width: 10%;margin-bottom: 5%">
+  <div style="float: left;">
+    <h5>Año:</h5>
+    <select name="_periodYear" ng-model="vm.periodYear" ng-change="vm.filterByYear()">
+        <option value="{{_periodYear}}" ng-repeat="_periodYear in vm.periodYears">{{_periodYear}}</option>
+    </select>
+  </div>
+</div>
+<div ng-if="vm.searchResults.length > 0">
+	<tb-table class="col-md-12" schema="vm.tableSchema" model="vm.searchResults"></tb-table>
+</div>
+<div ng-if="vm.searchResults.length === 0">
+	<h1 style="text-align: center; color: #999;">Sin resultados.</h1>
+</div>
 <tb-loading class="main-loader" ng-show="vm.settlementLoading"></tb-loading>
