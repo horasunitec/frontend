@@ -85,6 +85,9 @@ function TbUtils(toaster, $rootScope, $mdDialog, $state) {
             for (const key in err)
                 displayNotification('error', 'Error: ' + err[key][0]);
         }
+        else if (response.status === 403) {
+            displayNotification('warning', 'Cuenta expirada, has logout y luego login.');
+        }
         else
             displayNotification('error', 'Error: ' + response.data);
     }
