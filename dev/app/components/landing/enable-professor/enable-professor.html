@@ -5,25 +5,25 @@
       <form autocomplete="off" ng-hide="vm.submitting" name="form" ng-submit="form.$valid && vm.submit()"
       novalidate class="form-horizontal">
         <fieldset>
-          <h2 style="margin-bottom: 20px;">Registro Alumnos</h2>
+          <h2 style="margin-bottom: 20px;">Registro Profesores</h2>
           <div class="control-group">
             <div class="controls">
               <div class="inner-addon left-addon">
                 <span class="fa fa-sort-numeric-asc"></span>
                 <input ng-model="vm.student.AccountId" class="user" type="text" name="accountId" 
-                placeholder="Número de Cuenta" ng-pattern="regex['accountId']" 
+                placeholder="Número de Talento Humano" ng-pattern="regex['accountId']" 
                 minlength="4" maxlength="8" required>
               </div>
               <span ng-show="form.$submitted || form.accountId.$touched">
                 <p class="error-message" ng-show="form.accountId.$error.required">
-                  Por favor ingrese un n&uacute;mero de cuenta.
+                  Por favor ingrese un n&uacute;mero de talento humano.
                 </p>
                 <p class="error-message" 
                 ng-show="form.accountId.$error.minlength">
-                  El n&uacute;mero de cuenta debe de ser entre 4 y 8 digitos.
+                  El n&uacute;mero de talento humano debe de ser entre 4 y 8 digitos.
                 </p>
                 <p class="error-message" ng-show="form.accountId.$error.pattern">
-                  El n&uacute;mero de cuenta solo puede contener n&uacute;meros.
+                  El n&uacute;mero de talento humano solo puede contener n&uacute;meros.
                 </p>
               </span>
             </div>
@@ -58,24 +58,6 @@
               <span ng-show="form.$submitted || form.lastName.$touched">
                 <p class="error-message" ng-show="form.lastName.$error.required">
                   Por favor ingrese un apellido.
-                </p>
-              </span>
-            </div>
-          </div>
-
-          <div class="control-group">
-            <div class="controls">
-              <div class="inner-addon left-addon">
-                <label>Carrera</label>
-                <!-- <span class="fa fa-user"></span> -->
-                <select ng-model="vm.student.MajorId" name="major" required style="font-family:'Open Sans,sans-serif';font-size: 1.6rem;color: #2b3e51;width: 100%;max-width: 600px;margin-bottom: 25px">
-                  <option ng-repeat="major in vm.majors" value="{{major.MajorId}}">{{major.Name}}</option>
-                </select>
-              </div>
-
-              <span ng-show="form.$submitted || form.major.$touched">
-                <p class="error-message" ng-show="form.major.$error.required">
-                  Por favor seleccione una carrera.
                 </p>
               </span>
             </div>

@@ -29,6 +29,13 @@ function professors($http) {
             .finally(fin);
     }
 
+    function enableProfessor(professor, suc, err, fin){
+        $http.post(url + '/EnableProfessor', JSON.stringify(professor))
+         .then(suc)
+         .catch(err)
+         .finally(fin);
+    }
+
     function getActiveProfessor(professorId, successCallback, errorCallback) {
         $http.get(url + '?$filter=Id eq ' + professorId).then(successCallback)
             .catch(errorCallback);

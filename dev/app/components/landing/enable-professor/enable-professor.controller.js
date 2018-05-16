@@ -1,13 +1,12 @@
-EnableStudentController.$inject = [ 'TbUtils', 'students', 'majors' ];
+EnableProfessorController.$inject = [ 'TbUtils', 'professors', 'majors' ];
 
-function EnableStudentController (TbUtils,  students, majors) {
+function EnableProfessorController (TbUtils,  professors, majors) {
 	const vm = this;
 
-  vm.student = {
+  vm.professor = {
     AccountId: "",
     Email: "",
     Password: "",
-    MajorId: 0,
     FirstName:"",
     LastName:""
   };
@@ -21,10 +20,10 @@ function EnableStudentController (TbUtils,  students, majors) {
   function submit (){
     vm.submitting = true;
 
-    TbUtils.postAndGoTo(students.enableStudent, vm.student, 'landing.login', 
+    TbUtils.postAndGoTo(professors.enableProfessor, vm.professor, 'landing.login', 
       'Revisa tu correo con el link, para activar tu cuenta.', () => { vm.submitting = false; });
   }
 
 }
 
-module.exports = { name: 'EnableStudentController', ctrl: EnableStudentController };
+module.exports = { name: 'EnableProfessorController', ctrl: EnableProfessorController };
