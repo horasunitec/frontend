@@ -8,12 +8,14 @@ function tbTable(tableBuilder) {
             schema: '=',
             model: '=',
             onRowClick: '=?',
-            table: '=?'
+            table: '=?',
+            customStyle: '='
         },
-        link: scope => {
+        link: (scope, elem, attrs) => {
             if (!scope.onRowClick) scope.onRowClick = data => {};
 
             scope.blockRowClick = false;
+            scope.customstyle = attrs.customstyle;
 
             scope.$watch('model', newModel => {
                 if (newModel) 

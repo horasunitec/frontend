@@ -1,6 +1,6 @@
-ProjectsController.$inject = [ 'TbUtils', 'projects', '$rootScope', 'periods'];
+ProjectsController.$inject = [ 'TbUtils', 'projects', '$rootScope', 'periods', '$http'];
 
-function ProjectsController(TbUtils, projects, $rootScope, periods) {
+function ProjectsController(TbUtils, projects, $rootScope, periods, $http) {
     const vm = this;
 
     vm.searchObj = term => { return { Name: term }; };
@@ -72,6 +72,8 @@ function ProjectsController(TbUtils, projects, $rootScope, periods) {
         for(var i=initialYear; i<=currentYear; i++){
             yearArray.push(i);
         }
+        // $http.defaults.headers.common['Authorization'] = "";
+        // console.log('llego');
         return yearArray.reverse();
     }
 }
