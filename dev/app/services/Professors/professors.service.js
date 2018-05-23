@@ -9,6 +9,7 @@ function professors($http) {
         getActiveProfessor: getActiveProfessor,
         getWithPagination: getWithPagination,
         get: get,
+        enableProfessor: enableProfessor,
         getAlpha: getAlpha,
         update: update
     };
