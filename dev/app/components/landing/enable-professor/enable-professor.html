@@ -10,7 +10,7 @@
             <div class="controls">
               <div class="inner-addon left-addon">
                 <span class="fa fa-sort-numeric-asc"></span>
-                <input ng-model="vm.student.AccountId" class="user" type="text" name="accountId" 
+                <input ng-model="vm.professor.AccountId" class="user" type="text" name="accountId" 
                 placeholder="Número de Talento Humano" ng-pattern="regex['accountId']" 
                 minlength="4" maxlength="8" required>
               </div>
@@ -33,7 +33,7 @@
             <div class="controls">
               <div class="inner-addon left-addon">
                 <span class="fa fa-user"></span>
-                <input ng-model="vm.student.FirstName" class="user" 
+                <input ng-model="vm.professor.FirstName" class="user" 
                 type="text" name="firstName" placeholder="Nombre"
                 readonly onfocus="this.removeAttribute('readonly');" required>
               </div>
@@ -50,7 +50,7 @@
             <div class="controls">
               <div class="inner-addon left-addon">
                 <span class="fa fa-user"></span>
-                <input ng-model="vm.student.LastName" class="user" 
+                <input ng-model="vm.professor.LastName" class="user" 
                 type="text" name="lastName" placeholder="Apellido"
                 readonly onfocus="this.removeAttribute('readonly');" required>
               </div>
@@ -67,7 +67,7 @@
             <div class="controls">
               <div class="inner-addon left-addon">
                 <span class="fa fa-envelope-square"></span>
-                <input ng-model="vm.student.Email" class="user" 
+                <input ng-model="vm.professor.Email" class="user" 
                 ng-pattern="regex['email']" type="email" name="email" placeholder="Correo de Unitec"
                 readonly onfocus="this.removeAttribute('readonly');" required>
               </div>
@@ -87,7 +87,7 @@
             <div class="controls">
               <div class="inner-addon left-addon">
                 <span class="fa fa-unlock"></span>
-                <input ng-model="vm.student.Password" ng-pattern="regex['password']" 
+                <input ng-model="vm.professor.Password" ng-pattern="regex['password']" 
                 minlength="8" class="user" type="password" name="password" placeholder="Contrase&ntilde;a"
                 readonly onfocus="this.removeAttribute('readonly');" required>
               </div>
@@ -109,8 +109,8 @@
             <div class="controls">
               <div class="inner-addon left-addon">
                 <span class="fa fa-lock"></span>
-                <input ng-model="confirmPass" ng-pattern="vm.student.Password" class="user" type="password" 
-                name="confirmPass" placeholder="Confirmar Contrase&ntilde;a" tb-equals="vm.student.Password"
+                <input ng-model="confirmPass" ng-pattern="vm.professor.Password" class="user" type="password" 
+                name="confirmPass" placeholder="Confirmar Contrase&ntilde;a" tb-equals="vm.professor.Password"
                 readonly onfocus="this.removeAttribute('readonly');" required>
               </div>
               <span ng-show="form.$submitted || form.confirmPass.$touched">
