@@ -12,6 +12,7 @@ function students ($http, $q) {
 		importStudents: importStudents,
 		enableStudent: enableStudent,
 		getWithPagination: getWithPagination,
+		getStudentsByYear:getStudentsByYear,
 		update: update,
 		post: post
 	};
@@ -20,6 +21,13 @@ function students ($http, $q) {
 
 	function get (success, error, fin) {
         $http.get(url)
+        	.then(success)
+            .catch(error)
+            .finally(fin);
+	}
+
+	function getStudentsByYear (year, success, error, fin) {
+        $http.get(url + '/GetStudentsByYear/' + year)
         	.then(success)
             .catch(error)
             .finally(fin);

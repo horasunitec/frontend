@@ -1,12 +1,15 @@
-module.exports = userType => {
+module.exports = (userType, btnClick) => {
 	let schema = {
-		headers: [ 'Número de Cuenta', 'Nombre', 'Correo', 'Campus', 'Cuenta Activa' ],
+		headers: [ 'Número de Cuenta', 'Nombre', 'Correo', 'Campus', 'Cuenta Activa', 'Editar' ],
 		rows: [
 			{ type: 'label', props: { text: obj => obj.AccountId }  },
 			{ type: 'label', props: { text: obj => obj.Name }  },
 			{ type: 'label', props: { text: obj => obj.Email ? obj.Email : 'N/A' }  },
 			{ type: 'label', props: { text: obj => obj.Campus } },
-			{ type: 'label', props: { text: obj => obj.Status ? 'Si' : 'No' } }
+			{ type: 'label', props: { text: obj => obj.Status ? 'Si' : 'No' } },
+			{ type: 'button', props: { icon: 'glyphicon glyphicon-pencil', 
+					                       tooltip: 'Editar Usuario', 
+					                       onClick: btnClick } }
 		]
 	};
 	

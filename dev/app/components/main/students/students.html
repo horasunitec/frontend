@@ -5,14 +5,22 @@
                  loading="vm.loading"
                  auto="true">
 </tb-search-field>
+<div style="margin-left: auto;margin-right: auto;text-align: center;width: 10%;margin-bottom: 5%">
+  <div style="float: left;">
+    <h5>Año:</h5>
+    <select name="_periodYear" ng-model="vm.periodYear" ng-change="vm.filterByYear()">
+        <option value="{{_periodYear}}" ng-repeat="_periodYear in vm.periodYears">{{_periodYear}}</option>
+    </select>
+  </div>
+</div>
 <md-button class="md-raised" ng-click="vm.goToImportStudents()" 
            style="position: absolute; top: 3.7%; left: 77%;">Importar Alumnos</md-button>
 <div class="row" ng-if="vm.students.length > 0">
 	<tb-table class="col-md-12" 
 	          schema="vm.tableSchema" 
 	          model="vm.searchResults"
-	          on-row-click="vm.editStudent"
-	          style="margin-bottom: 40px;">
+	          style="margin-bottom: 40px;"
+            customStyle="cursor: default">
 	</tb-table>
 </div>
 <h1 style="text-align: center; color: #999;" ng-if="vm.searchResults.length === 0">Sin resultados.</h1>

@@ -7,7 +7,8 @@ function ProfessorsController (TbUtils, professors) {
     vm.professorObj = term => { return { AccountId: term }; };
 
     vm.professors = [];
-    vm.tableSchema = require('../../../table-schemas/users-table-schema')('professor');
+    vm.editProfessor = professor => { TbUtils.go('main.edit-professor', { professor: btoa(JSON.stringify(professor)) }); };
+    vm.tableSchema = require('../../../table-schemas/users-table-schema')('professor', vm.editProfessor);
 
     vm.pageSize = 10;
     vm.get = professors.getWithPagination;
@@ -15,7 +16,7 @@ function ProfessorsController (TbUtils, professors) {
     vm.hideLoadBtn = () => vm.professors.length !== vm.searchResults.length;
 
     vm.goToNewProfessor = () => { TbUtils.go('main.new-professor'); };
-    vm.editProfessor = professor => { TbUtils.go('main.edit-professor', { professor: btoa(JSON.stringify(professor)) }); };
+    
 
     vm.loading = true;
 
