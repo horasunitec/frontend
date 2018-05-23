@@ -12,10 +12,11 @@
             <input name="clave" ng-model="vm.password" type="password" placeholder="Clave" required/>
             </div>
             <button id="ingresar" type="submit">Ingresar</button>
-            <p class="message register">No est&aacute;s registrado a&uacute;n? <a ui-sref="landing.enable-student">Crear una cuenta alumno</a></p>
-            <p class="message register">No est&aacute;s registrado a&uacute;n? <a ui-sref="landing.enable-professor">Crear una cuenta docente</a></p>
+            <p class="message register">No est&aacute;s registrado a&uacute;n?
+                <br><a ui-sref="landing.enable-student">Crear una cuenta como alumno</a>
+                <br><a ui-sref="landing.enable-professor">Crear una cuenta como docente</a>
+            </p>
             <tb-loading class="landing-loader main-loader" ng-show="vm.loading"></tb-loading>
         </form>
       </div>
-
 </div>
