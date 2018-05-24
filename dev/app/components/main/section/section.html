@@ -1,8 +1,8 @@
 <div class="container">
   <div class="col-xs-9 col-sm-7 col-md-7" style="margin-top: 15px;">
     <div>
-      <h1>Clase: {{vm.toTitleCase(vm.section.Class.Name)}}</h1>
-      <h2>Docente: {{vm.toTitleCase(vm.section.User.Name)}}</h2><br>
+      <h1>Clase: {{vm.section.Class.Name}}</h1>
+      <h2>Docente: {{vm.section.User.Name}}</h2><br>
       <label>C&oacute;digo de Secci&oacute;n: {{vm.section.Code}}</label><br>
       <label>Periodo: {{vm.section.Period.Number}}</label><br>
       <label>Año: {{vm.section.Period.Year}}</label><br><br>
@@ -60,7 +60,7 @@
 </div>
 
 <div style="display: flex; justify-content: flex-end; margin: 45px 0; width: 90%;">
-  <md-button class="md-raised" style="background: #5bb7b5" ng-click="vm.showSectionProjectModal()">Agregar Proyecto</md-button>
+  <md-button class="md-raised" style="background: #5bb7b5" ng-click="vm.showSectionProjectModal()">Agregar Proyecto a esta Seccion</md-button>
 </div>
 
 <tb-loading class="main-loader" ng-show="vm.projectsLoading || vm.studentsLoading"></tb-loading>

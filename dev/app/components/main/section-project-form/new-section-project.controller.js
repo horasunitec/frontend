@@ -25,11 +25,9 @@ function NewSectionProjectController (TbUtils, projects, sectionProjects, sectio
 	init();
 
 	function init () {
-		if (!projects.cached || projects.cached.length === 0) {		
-			vm.projectsLoading = true;
-			projects.cached = [];
-			TbUtils.getAndLoad(projects.getProjects, projects.cached, () => { vm.projectsLoading = false; });
-		}
+		vm.projectsLoading = true;
+		projects.cached = [];
+		TbUtils.getAndLoad(projects.getProjects, projects.cached, () => { vm.projectsLoading = false; });
 	}
 
 	function submit () {
