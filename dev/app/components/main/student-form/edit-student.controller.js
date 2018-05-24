@@ -3,8 +3,17 @@ EditStudentController.$inject = [ 'TbUtils', 'students', 'majors', '$stateParams
 function EditStudentController (TbUtils, students, majors, stateParams) {
 	const vm = this;
 
-	vm.student = JSON.parse(atob(stateParams.student));
-	vm.student.MajorId = vm.student.Major.MajorId;
+	var studentInyected = JSON.parse(atob(stateParams.student));
+    vm.student = {
+        AccountId = studentInyected.AccountId,
+        Name = studentInyected.Name,
+        MajorId = studentInyected.Major.MajorId,
+        Campus = studentInyected.Campus,
+        Email = studentInyected.Email
+    };
+
+	//vm.student = JSON.parse(atob(stateParams.student));
+	//vm.student.MajorId = vm.student.Major.MajorId;
 
 	const oldAccountId = vm.student.AccountId;
 
