@@ -24,7 +24,7 @@
 </div>
 <div class="gallery">
 	<div class="card" ng-repeat="prj in vm.searchResults" title="{{prj.Description}}">
-		<span class="icon-group" ng-show="Role === 'Admin'">
+		<span class="icon-group" ng-show="Role === 'Admin' || Role === 'Professor'">
 			<i class="glyphicon glyphicon-remove"
 			ng-click="vm.removeProjectClicked(prj)">
 			</i>
