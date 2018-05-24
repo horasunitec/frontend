@@ -13,7 +13,7 @@ function DeleteSectionController (TbUtils, sections, stateParams) {
         resolve => {
             if (resolve) {
                 vm.loading = true;
-                TbUtils.deleteAndNotify(sections.deleteSection, vm.section.Id, [], 
+                TbUtils.deleteAndNotify(sections.deleteSection, vm.section, [], 
                     'La sección se borro exitosamente.', () => { vm.loading = false; });
             }
         }
