@@ -1,7 +1,8 @@
 $main-color: #213250;
 
 body {
-    overflow-y: hidden;
+    /*overflow-y: hidden;*/
+    display: table;
 
     .general-loader {
         background: $main-color;
