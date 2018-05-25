@@ -5,7 +5,7 @@
                  loading="vm.loading"
                  auto="true">
 </tb-search-field>
-<div class="row" ng-if="vm.classes.length > 0">
+<div class="row" ng-if="vm.searchResults.length > 0">
 	<tb-table class="col-md-12" 
 	          schema="vm.tableSchema" 
 	          model="vm.searchResults"

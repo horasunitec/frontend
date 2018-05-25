@@ -36,7 +36,9 @@ function tbSearchField(TbUtils, filterFilter) {
                     scope.loading = true;
                     scope.getAll(resp => { 
                                             scope.all = resp.data; 
-                                            search(scope.all, term); 
+                                            search(scope.all, term);
+                                            document.getElementById('_periodNumber').value = '';
+                                            document.getElementById('_periodYear').value = '';
                                         }, 
                                             TbUtils.showErrorMessage,
                                  () => { scope.loading = false; });
@@ -50,7 +52,12 @@ function tbSearchField(TbUtils, filterFilter) {
                 if (term.length === 0) return;
                 if (typeof scope.getAll === 'function' && !scope.all) {
                     scope.loading = true;
-                    scope.getAll(resp => { scope.all = resp.data; search(scope.all, term); }, 
+                    scope.getAll(resp => { 
+                                            scope.all = resp.data; 
+                                            search(scope.all, term);
+                                            document.getElementById('_periodNumber').value = '';
+                                            document.getElementById('_periodYear').value = '';
+                                         }, 
                                  TbUtils.showErrorMessage,
                                  () => { scope.loading = false; });
                     console.log(scope);
@@ -60,6 +67,7 @@ function tbSearchField(TbUtils, filterFilter) {
             }
 
             function search (list, term) {
+                // console.log(list);
                 if (list && typeof scope.obj === 'function')
                     scope.results = filterFilter(list, scope.obj(term));
                 else
