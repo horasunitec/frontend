@@ -60,18 +60,36 @@ function tbSearchField(TbUtils, filterFilter) {
                                          }, 
                                  TbUtils.showErrorMessage,
                                  () => { scope.loading = false; });
-                    console.log(scope);
+                    // console.log(scope);
                 }
                 else
                     search(scope.all, term);
             }
 
             function search (list, term) {
-                // console.log(list);
+                console.log(list);
                 if (list && typeof scope.obj === 'function')
-                    scope.results = filterFilter(list, scope.obj(term));
+                    scope.results = filterFilter(list, scope.obj(term), searchIgnoreAccents);
                 else
                     scope.results = scope.data;
+            }
+
+            function searchIgnoreAccents (actual, expected) {
+                let actualStrValue = actual.toLowerCase()
+                    .replace(/á/g, 'a')            
+                    .replace(/é/g, 'e')
+                    .replace(/í/g, 'i')
+                    .replace(/ó/g, 'o')
+                    .replace(/ú/g, 'u');
+
+                let expectedStrValue = expected.toLowerCase()
+                    .replace(/á/g, 'a')            
+                    .replace(/é/g, 'e')
+                    .replace(/í/g, 'i')
+                    .replace(/ó/g, 'o')
+                    .replace(/ú/g, 'u');
+                
+                return actualStrValue.indexOf(expectedStrValue) > -1;
             }
 
         }
