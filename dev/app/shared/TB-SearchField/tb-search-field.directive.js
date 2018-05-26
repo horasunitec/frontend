@@ -43,7 +43,6 @@ function tbSearchField(TbUtils, filterFilter) {
                                         }, 
                                             TbUtils.showErrorMessage,
                                  () => { scope.loading = false; });
-                    console.log(scope);
                 }
                 else
                     search(scope.all, term);
@@ -56,20 +55,17 @@ function tbSearchField(TbUtils, filterFilter) {
                     scope.getAll(resp => { 
                                             scope.all = resp.data; 
                                             search(scope.all, term);
-                                            document.getElementById('_periodNumber').value = '';
-                                            document.getElementById('_periodYear').value = '';
+                                            [...document.getElementsByClassName('sectionProjectSelectFilter')]
+                                                .forEach(e => e.value = '');
                                          }, 
                                  TbUtils.showErrorMessage,
                                  () => { scope.loading = false; });
-                    // console.log(scope);
                 }
                 else
                     search(scope.all, term);
             }
 
             function search (list, term) {
-                console.log(list);
-                console.log(scope.obj(term));
                 if (list && typeof scope.obj === 'function') {
                     if (scope.ignoreAccents)
                         scope.results = filterFilter(list, scope.obj(term), searchIgnoreAccents);
