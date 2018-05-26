@@ -12,6 +12,7 @@ function tbSearchField(TbUtils, filterFilter) {
             loading: '=?',
             auto: '=?',
             min: '=?',
+            ignoreAccents: '=?',
             placeholder: '@?'
         },
         templateUrl: 'templates/shared/TB-SearchField/tb-search-field.html',
@@ -68,8 +69,13 @@ function tbSearchField(TbUtils, filterFilter) {
 
             function search (list, term) {
                 console.log(list);
-                if (list && typeof scope.obj === 'function')
-                    scope.results = filterFilter(list, scope.obj(term), searchIgnoreAccents);
+                console.log(scope.obj(term));
+                if (list && typeof scope.obj === 'function') {
+                    if (scope.ignoreAccents)
+                        scope.results = filterFilter(list, scope.obj(term), searchIgnoreAccents);
+                    else
+                        scope.results = filterFilter(list, scope.obj(term))
+                }
                 else
                     scope.results = scope.data;
             }
