@@ -3,18 +3,19 @@
                  data="vm.projects" 
         				 get-all="vm.getAll"
         				 loading="vm.loading"
-                 auto="true">
+                 auto="true"
+                 ignore-accents="true">
 </tb-search-field>
 <div style="margin-left: auto;margin-right: auto;text-align: center;width: 10%;margin-bottom: 5%">
   <div style="float: left">
     <h5>Periodo:</h5>
-    <select id="_periodNumber" name="_periodNumber" ng-model="vm.periodNumber" ng-change="vm.filterByPeriod()" ng-selected="vm.periodNumber">
+    <select class="sectionProjectSelectFilter" name="_periodNumber" ng-model="vm.periodNumber" ng-change="vm.filterByPeriod()" ng-selected="vm.periodNumber">
         <option value="{{_periodNumber}}" ng-repeat="_periodNumber in vm.periodNumbers">{{_periodNumber}}</option>
     </select>
   </div>
   <div style="float: left;">
     <h5>Año:</h5>
-    <select id="_periodYear" name="_periodYear" ng-model="vm.periodYear" ng-change="vm.filterByPeriod()" ng-selected="vm.periodYear">
+    <select class="sectionProjectSelectFilter" name="_periodYear" ng-model="vm.periodYear" ng-change="vm.filterByPeriod()" ng-selected="vm.periodYear">
         <option value="{{_periodYear}}" ng-repeat="_periodYear in vm.periodYears">{{_periodYear}}</option>
     </select>
   </div>
