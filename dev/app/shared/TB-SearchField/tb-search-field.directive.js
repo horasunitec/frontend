@@ -24,7 +24,7 @@ function tbSearchField(TbUtils, filterFilter) {
             scope.all = null;
             scope.search = search;
 
-            scope.$watch('searchText', term => {
+            scope.$watch('searchText', term => {              
                 if (scope.auto && term.length >= scope.min)
                     scope.search(scope.data, term);
                 else
@@ -38,39 +38,47 @@ function tbSearchField(TbUtils, filterFilter) {
                     scope.getAll(resp => { 
                                             scope.all = resp.data; 
                                             search(scope.all, term);
-                                            document.getElementById('_periodNumber').value = '';
-                                            document.getElementById('_periodYear').value = '';
+                                            clearSelectFilter();
                                         }, 
                                             TbUtils.showErrorMessage,
                                  () => { scope.loading = false; });
                 }
-                else
+                else {
                     search(scope.all, term);
+                    clearSelectFilter();
+                }
             }
 
             function searchAll (term) {
                 if (term.length === 0) return;
                 if (typeof scope.getAll === 'function' && !scope.all) {
+                    
                     scope.loading = true;
                     scope.getAll(resp => { 
                                             scope.all = resp.data; 
                                             search(scope.all, term);
-                                            [...document.getElementsByClassName('sectionProjectSelectFilter')]
-                                                .forEach(e => e.value = '');
+                                            clearSelectFilter();                                            
                                          }, 
                                  TbUtils.showErrorMessage,
                                  () => { scope.loading = false; });
                 }
-                else
-                    search(scope.all, term);
+                else {
+                        search(scope.all, term);
+                        clearSelectFilter();
+                }
+            }
+
+            function clearSelectFilter () {
+                [...document.getElementsByClassName('sectionProjectSelectFilter')]
+                            .forEach(e => e.value = '');
             }
 
             function search (list, term) {
                 if (list && typeof scope.obj === 'function') {
                     if (scope.ignoreAccents)
-                        scope.results = filterFilter(list, scope.obj(term), searchIgnoreAccents);
+                        scope.results = scope.data = filterFilter(list, scope.obj(term), searchIgnoreAccents);
                     else
-                        scope.results = filterFilter(list, scope.obj(term))
+                        scope.results = scope.data = filterFilter(list, scope.obj(term))
                 }
                 else
                     scope.results = scope.data;
