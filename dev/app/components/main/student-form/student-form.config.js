@@ -12,7 +12,7 @@ function config ($stateProvider) {
 
 		.state('main.edit-student', {
 			url: '/alumnos/editar-alumno/{student}',
-			templateUrl: 'templates/components/main/student-form/student-form.html',
+			templateUrl: 'templates/components/main/student-form/edit-student-form.html',
 			controller: "EditStudentController as vm",
 			onEnter: editStudentStateEnter
 		});

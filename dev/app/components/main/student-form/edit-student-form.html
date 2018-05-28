@@ -1,0 +1,64 @@
+<form name="form" class="cd-form" ng-submit="form.$valid && vm.submit()" novalidate>
+    <legend>
+        <strong>{{vm.formTitle}}</strong>
+    </legend>
+    
+    <div>
+        <label class="cd-label">N&uacute;mero de Cuenta</label>
+        <input ng-model="vm.student.AccountId" maxlength="8" minlength="8" type="text" 
+               ng-pattern="regex['accountId']" name="accountId" id="cd-name" required>
+        <span ng-show="form.$submitted || form.accountId.$touched">
+            <p class="error-message" ng-show="form.accountId.$error.required">
+                * Por favor ingrese un n&uacute;mero de cuenta.
+            </p>
+            <p class="error-message" ng-show="form.accountId.$error.minlength">
+                * N&uacute;mero de cuenta debe de estar compuesto por 8 digitos.
+            </p>
+            <p class="error-message" ng-show="form.accountId.$error.pattern">
+                * El n&uacute;mero de cuenta solo puede tener n&uacute;meros.
+            </p>
+        </span>
+    </div>
+    
+    <div>
+        <label class="cd-label">Nombre</label>
+        <input ng-model="vm.student.Name" class="user" type="text" name="name" id="cd-name" required> 
+        <span ng-show="form.$submitted || form.name.$touched">
+            <p class="error-message" ng-show="form.name.$error.required">
+                * El nombre es requerido.
+            </p>
+        </span>
+    </div>
+
+    <div>
+        <label class="cd-label">Correo</label>
+        <input ng-model="vm.student.Email" class="user" type="email" name="email" id="cd-name" 
+               ng-pattern="regex['email']" required>
+        <span ng-show="form.$submitted || form.email.$touched">
+            <p class="error-message" ng-show="form.email.$error.required">
+                * Por favor ingrese un correo electr&oacute;nico.
+            </p>
+            <p class="error-message" ng-show="form.email.$error.pattern">
+                * Por favor ingrese un correo electr&oacute;nico v&aacute;lido.
+            </p>
+        </span>
+    </div>
+
+    <div>
+        <label class="cd-label" for="cd-name">Campus</label>
+        <select name="campus" ng-model="vm.student.Campus" required>
+            <option value="TGU">TGU</option>
+            <option value="USPS">SPS</option>
+        </select>
+        <span ng-show="form.$submitted || form.campus.$touched">
+            <p class="error-message" ng-show="form.campus.$error.required">
+                * Por favor seleccione un campus.
+            </p>
+        </span>
+    </div>
+
+    <div>
+        <input type="submit" ng-hide="vm.submitting" value="Confirmar">
+    </div>
+</form>
+<tb-loading class="main-loader" ng-show="vm.submitting"></tb-loading> 
