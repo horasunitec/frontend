@@ -63,7 +63,7 @@ function EditHoursController($stateParams, sections, projects,
     }
 
     function getProjectSuccess(response) {
-        vm.projectName = TbUtils.toTitleCase(response.data.Name);
+        vm.projectName = response.data.Name;
         vm.projectLoading = false;
     }
     

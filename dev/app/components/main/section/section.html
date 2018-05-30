@@ -41,7 +41,7 @@
       <tbody>
         <tr ng-repeat="student in vm.students">
           <td>{{student.AccountId}}</td>
-          <td>{{vm.toTitleCase(student.Name)}}</td>
+          <td>{{student.Name}}</td>
         </tr>
       </tbody>
     </table>
@@ -52,6 +52,7 @@
 </div>
 
 <h1 style="margin-left: 5%; margin-bottom: 20px;margin-top: 20px" class="col-md-10 class-style">Proyectos</h1>
+<h6 style="margin-left: 5%; margin-bottom: 5px;margin-top: 5px" class="col-md-10 class-style">(Hacer click sobre un proyecto para registar horas)</h6>
 <div ng-if="vm.projects.length === 0">
   <h6 style="margin-left: 5%; margin-bottom: 20px;" class="col-md-10">A&uacute;n no existe proyectos asignados a esta secci&oacute;n, presiona en Agregar Proyecto.</h6>
 </div>
