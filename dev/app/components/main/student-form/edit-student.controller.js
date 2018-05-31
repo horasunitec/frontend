@@ -8,6 +8,10 @@ function EditStudentController (TbUtils, students, majors, stateParams) {
 	vm.formTitle = "Editar Estudiante";
     vm.submitting = false;
     vm.submit = submit;
+    vm.majorsLoading = true;
+    vm.majors = []; 
+
+    TbUtils.getAndLoad(majors.getMajors, vm.majors, () => { vm.majorsLoading = false;});
 
     function submit () {
     	vm.submitting = true;
