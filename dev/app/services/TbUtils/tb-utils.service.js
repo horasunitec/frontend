@@ -48,7 +48,7 @@ function TbUtils(toaster, $rootScope, $mdDialog, $state) {
             type: type,
             title: title,
             body: body,
-            timeout: 4000
+            timeout: 5000
         });
     }
 
