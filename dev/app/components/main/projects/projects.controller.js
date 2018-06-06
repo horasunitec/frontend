@@ -73,8 +73,6 @@ function ProjectsController(TbUtils, projects, $rootScope, periods, $http) {
         for(var i=initialYear; i<=currentYear; i++){
             yearArray.push(i);
         }
-        // $http.defaults.headers.common['Authorization'] = "";
-        // console.log('llego');
         return yearArray.reverse();
     }
 }

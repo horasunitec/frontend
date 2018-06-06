@@ -34,13 +34,13 @@
               <div class="inner-addon left-addon">
                 <span class="fa fa-user"></span>
                 <input ng-model="vm.student.FirstName" class="user" 
-                type="text" name="firstName" placeholder="Nombre"
+                type="text" name="firstName" placeholder="Nombres"
                 readonly onfocus="this.removeAttribute('readonly');" required>
               </div>
 
               <span ng-show="form.$submitted || form.firstName.$touched">
                 <p class="error-message" ng-show="form.firstName.$error.required">
-                  Por favor ingrese un nombre.
+                  Por favor ingrese sus nombres.
                 </p>
               </span>
             </div>
@@ -51,13 +51,13 @@
               <div class="inner-addon left-addon">
                 <span class="fa fa-user"></span>
                 <input ng-model="vm.student.LastName" class="user" 
-                type="text" name="lastName" placeholder="Apellido"
+                type="text" name="lastName" placeholder="Apellidos"
                 readonly onfocus="this.removeAttribute('readonly');" required>
               </div>
 
               <span ng-show="form.$submitted || form.lastName.$touched">
                 <p class="error-message" ng-show="form.lastName.$error.required">
-                  Por favor ingrese un apellido.
+                  Por favor ingrese sus apellidos.
                 </p>
               </span>
             </div>

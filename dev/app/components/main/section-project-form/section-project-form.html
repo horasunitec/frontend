@@ -32,6 +32,15 @@
 	    </md-autocomplete>
 
       <md-input-container class="md-block">
+        <label>Organizacion Beneficiaria</label>
+        <input md-maxlength="100" required name="organization" ng-model="vm.project.Organization">
+        <div ng-messages="form.$submitted || form.organization.$error" ng-if="form.organization.$touched">
+          <div ng-message="required">Ingrese la Organizacion Beneficiaria de este proyecto.</div>
+          <div ng-message="md-maxlength">La Organizacion debe ser menor de 100 caracteres.</div>
+        </div>
+      </md-input-container>
+
+      <md-input-container class="md-block">
         <label>Actividades a desarrollar</label>
         <input md-maxlength="100" required name="description" ng-model="vm.project.Description">
         <div ng-messages="form.$submitted || form.description.$error" ng-if="form.description.$touched">

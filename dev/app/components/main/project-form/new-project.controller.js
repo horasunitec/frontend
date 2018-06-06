@@ -9,8 +9,7 @@ function NewProjectController (TbUtils, projects, majors) {
     vm.project = {
         Name: '',
         Description: '',
-        MajorIds: [],
-        BeneficiarieOrganization: ''
+        MajorIds: []
     };
     vm.majors = [];
 

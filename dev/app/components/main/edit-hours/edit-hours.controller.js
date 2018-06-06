@@ -74,6 +74,7 @@ function EditHoursController($stateParams, sections, projects,
 
     function getSectionProjectSuccess(response){
         vm.cost = response.data.Cost;
+        vm.organization = response.data.Organization;
         vm.description = response.data.Description;
         vm.loadingProjectInfo = false;
     }

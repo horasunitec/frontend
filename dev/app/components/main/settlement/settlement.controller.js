@@ -30,7 +30,7 @@ function SettlementController(TbUtils, settlement) {
 
     function downloadSettlement (student) {
         TbUtils.confirm('Descargar Finiquito', 
-            'Una vez lo descargue, no podra volver a hacerlo. Continuar?', result => {
+            'Podra volver a descargarlo en el menu de Finiquitados. Continuar?', result => {
             if (result) {
                 window.open(settlement.dowloadFiniquitoReport(student.AccountId));
                 TbUtils.reload();
