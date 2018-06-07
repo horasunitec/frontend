@@ -93,7 +93,7 @@ function TbUtils(toaster, $rootScope, $mdDialog, $state) {
             $state.go('landing.login');
         }
         else
-            displayNotification('error', 'Error: ' + response.data);
+            displayNotification('error', 'Error: ' + 'Internal Server Error');
     }
 
     function setModalParams(params) {
