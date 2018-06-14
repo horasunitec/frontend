@@ -92,6 +92,9 @@ function TbUtils(toaster, $rootScope, $mdDialog, $state) {
             $rootScope.loggedIn = false;
             $state.go('landing.login');
         }
+        else if (response.status === 406) {
+            displayNotification('error', 'Error: ' + response.data);
+        }
         else
             displayNotification('error', 'Error: ' + 'Internal Server Error');
     }

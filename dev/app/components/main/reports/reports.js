@@ -11,38 +11,39 @@ module.exports = [
 		hasParam: true,
 		paramName: yearParamName,
 		placeholder: yearPlaceholder
-	},
-	{ 
-		title: 'Reporte del Número de Alumnos', 
-	  	url: `${reportsUrl}/StudentsReport/`,
-		hasParam: true,
-		paramName: yearParamName,
-		placeholder: yearPlaceholder
-	},
-	{ 
-		title: 'Reporte por Periodo', 
-	  	url: `${reportsUrl}/PeriodReport/`,
-		hasParam: true,
-		paramName: yearParamName,
-		placeholder: yearPlaceholder
-	},
-	{ 
-		title: 'Reporte de Proyectos por Clase', 
-	  	url: `${reportsUrl}/ProjectsByClassReport/`,
-		hasParam: true,
-		paramName: classIdParamName,
-		placeholder: classIdPlaceholder
-	},
-	{ 
-		title: 'Reporte de Horas', 
-	  	url: `${reportsUrl}/HoursReport/`,
-		hasParam: true,
-		paramName: yearParamName,
-		placeholder: yearPlaceholder
-	},
-	{ 
-		title: 'Reporte de Proyectos por Carrera', 
-	  	url: `${reportsUrl}/ProjectsByMajorReport`,
-		hasParam: false
 	}
+	// ,
+	// { 
+	// 	title: 'Reporte del Número de Alumnos', 
+	//   	url: `${reportsUrl}/StudentsReport/`,
+	// 	hasParam: true,
+	// 	paramName: yearParamName,
+	// 	placeholder: yearPlaceholder
+	// },
+	// { 
+	// 	title: 'Reporte por Periodo', 
+	//   	url: `${reportsUrl}/PeriodReport/`,
+	// 	hasParam: true,
+	// 	paramName: yearParamName,
+	// 	placeholder: yearPlaceholder
+	// },
+	// { 
+	// 	title: 'Reporte de Proyectos por Clase', 
+	//   	url: `${reportsUrl}/ProjectsByClassReport/`,
+	// 	hasParam: true,
+	// 	paramName: classIdParamName,
+	// 	placeholder: classIdPlaceholder
+	// },
+	// { 
+	// 	title: 'Reporte de Horas', 
+	//   	url: `${reportsUrl}/HoursReport/`,
+	// 	hasParam: true,
+	// 	paramName: yearParamName,
+	// 	placeholder: yearPlaceholder
+	// },
+	// { 
+	// 	title: 'Reporte de Proyectos por Carrera', 
+	//   	url: `${reportsUrl}/ProjectsByMajorReport`,
+	// 	hasParam: false
+	// }
 ];

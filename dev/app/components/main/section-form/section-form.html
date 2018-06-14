@@ -14,7 +14,11 @@
     </div>
 
     <div>
-        <label class="cd-label" for="cd-name">Clase</label>
+        <label class="cd-label" for="cd-name">Clase
+            <div ng-if="Role !== 'Admin'">
+                <h6 style="color:slategrey">Si la clase no aparece en esta lista, comunicarse con el Jefe de Vinculaci&oacute;n.</h6>
+            </div>
+        </label>
         <select name="_class" ng-model="vm.section.ClassId" 
                 ng-options="_class.Id as _class.Name for _class in vm.classes" required>
         </select>
@@ -40,7 +44,9 @@
     </div>
 
     <div>
-        <label class="cd-label" for="cd-name">Alumnos</label>
+        <label class="cd-label" for="cd-name">Alumnos
+            <h6 style="color:slategrey">(Si no aparece el alumno, &eacute;l debe registrarse en el sitio con una cuenta de unitec.)</h6>
+        </label>
         <md-autocomplete md-selected-item="vm.selectedStudent" 
                          md-search-text="searchText" 
                          md-items="student in vm.search(searchText)" 
