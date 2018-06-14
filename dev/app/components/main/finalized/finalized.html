@@ -1,3 +1,9 @@
 <tb-search-field obj="vm.searchObj" results="vm.searchResults" data="vm.tableData" auto="true"></tb-search-field>
-<tb-table class="col-md-12" schema="vm.tableSchema" model="vm.searchResults"></tb-table>
+<div ng-if="vm.searchResults.length>0">
+	<tb-table class="col-md-12" schema="vm.tableSchema" model="vm.searchResults"></tb-table>
+</div>
+<div ng-if="vm.searchResults.length===0" style="text-align: center;">
+	No hay finiquitados
+</div>
+
 <tb-loading class="main-loader" ng-show="vm.finalizedLoading"></tb-loading>
